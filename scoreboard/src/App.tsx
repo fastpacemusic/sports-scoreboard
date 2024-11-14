@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Scoreboard from './components/scoreboard/scoreboard';
 import './App.css';
+import DropdownBtn from './components/dropdownbtn/dropdownbtn';
 
 function App() {
 
@@ -58,9 +59,9 @@ function App() {
           <div className='logo'></div>
           <div className='name'>{leageName}</div>
           <div className='season'>{season}</div>
-          
+          <DropdownBtn years={[2020]} />
         </div>
-        <Scoreboard />
+        {/* <Scoreboard /> */}
       </div>
 
     </div>
