@@ -1,7 +1,19 @@
 import "./scoreboard.css";
 import Row from "./sb-row/row";
+import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
+
+
 
 const Scoreboard = () => {
+
+    const [position, setPosition] = useState();
+    const [points, setPoints] = useState();
+    const [goalDiff, setGoalDiff] = useState();
+    const [team, setTeam] = useState();
+
+
 
     return(
         <div className="scoreboard-wrap">
@@ -12,9 +24,7 @@ const Scoreboard = () => {
                 <div className="sb-pts num">PTS</div>
                 <div className="sb-gd num">GD</div>
             </div>
-            <Row />
-            <Row />
-            <Row />
+            {/* <Row pos={position} team={team} played={0} pts={points} gd={goalDiff}/> */}
         </div>
     );
 }
