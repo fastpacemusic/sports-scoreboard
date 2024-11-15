@@ -10,24 +10,9 @@ interface Years {
 
 const DropdownBtn = ({years}: Years) => {
 
-    // useEffect(() => {
-    //     const options = {
-    //         method: 'GET',
-    //         url: 'https://v3.football.api-sports.io/leagues/seasons',
-    //         headers: {
-    //           'x-rapidapi-host': 'v3.football.api-sports.io',
-    //           'x-rapidapi-key': 'XxXxXxXxXxXxXxXxXxXxXxXx'
-    //         }
-    //       };
-          
-    //       axios(options)
-    //         .then((response) => {
-    //           console.log(response.data);
-    //         })
-    //         .catch((error) => {
-    //           console.error('Error:', error);
-    //         });
-    // }, []);
+    useEffect(() => {
+
+    }, []);
     
 
     
@@ -49,12 +34,6 @@ const DropdownBtn = ({years}: Years) => {
             
             {isOpen && (
                 <div className="dropdown-menu">
-                    <a href="#option1" className="dropdown-item" onClick={() => clicked(years[1])}>{years[1]}</a>
-                    <a href="#option1" className="dropdown-item" onClick={() => clicked(years[1])}>{years[1]}</a>
-                    <a href="#option1" className="dropdown-item" onClick={() => clicked(years[1])}>{years[1]}</a>
-                    <a href="#option1" className="dropdown-item" onClick={() => clicked(years[1])}>{years[1]}</a>
-                    <a href="#option1" className="dropdown-item" onClick={() => clicked(years[1])}>{years[1]}</a>
-                    <a href="#option1" className="dropdown-item" onClick={() => clicked(years[1])}>{years[1]}</a>
                     <a href="#option1" className="dropdown-item" onClick={() => clicked(years[1])}>{years[1]}</a>
 
 

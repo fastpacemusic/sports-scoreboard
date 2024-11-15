@@ -30,7 +30,7 @@ const Scoreboard = () => {
                 const response = await axios.request(options);
 
                 setStandings(response.data.response[0].league.standings[0]);
-                console.log("standing", response.data.response[0].league.standings[0]);
+                // console.log("standing", response.data.response[0].league.standings[0]);
 
 
 
