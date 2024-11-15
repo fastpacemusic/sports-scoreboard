@@ -3,9 +3,18 @@
     height: 40px;
     align-items: center;
     cursor: pointer;
+    display: flex;
 }
 
 .rows:hover {
     background: #f95959; 
     border-radius: 5px;
+}
+
+.row-team {
+
+}
+
+.row-logo {
+    height: 100%;
 }
