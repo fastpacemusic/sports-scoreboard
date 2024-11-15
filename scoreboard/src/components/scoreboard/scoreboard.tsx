@@ -17,6 +17,9 @@ const Scoreboard = () => {
         played: 0
     });
 
+    const [standings, setStandings] = useState<any>();
+
+
     useEffect(() => {
         const options = {
             method: 'GET',
@@ -34,10 +37,15 @@ const Scoreboard = () => {
             try {
                 const response = await axios.request(options);
 
+
+
                 console.log('Scoreboard: ', response.data.response[0].league.standings[0][0]);
                 const {rank: rank, goalsDiff: goalsDiff, points: points} = response.data.response[0].league.standings[0][0];
                 const { team: { name } } = response.data.response[0].league.standings[0][0];
                 const { played } = response.data.response[0].league.standings[0][0].all;
+
+
+                
                 
 
                 setRowObject(prevState => ({
@@ -70,7 +78,11 @@ const Scoreboard = () => {
                 <div className="sb-pts num">PTS</div>
                 <div className="sb-gd num">GD</div>
             </div>
-            <Row pos={rowObject.position} team={rowObject.team} played={rowObject.played} pts={rowObject.points} gd={rowObject.goalDiff}/>
+           {/* {standings.map((position: number, index: number) => {
+            <Row key={index} pos={rowObject.position + 1} team={rowObject.team} played={rowObject.played} pts={rowObject.points} gd={rowObject.goalDiff}/>
+           })} */}
+            <Row  pos={rowObject.position} team={rowObject.team} played={rowObject.played} pts={rowObject.points} gd={rowObject.goalDiff}/>
+
         </div>
     );
 }
