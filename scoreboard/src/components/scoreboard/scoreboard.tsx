@@ -9,14 +9,6 @@ import { useEffect } from "react";
 
 const Scoreboard = () => {
 
-    const [rowObject, setRowObject] = useState({
-        position: 0,
-        points: 0,
-        goalDiff: 0,
-        team: "",
-        played: 0
-    });
-
     const [standings, setStandings] = useState<any>();
 
 
@@ -40,23 +32,10 @@ const Scoreboard = () => {
                 setStandings(response.data.response[0].league.standings[0]);
                 console.log("standing", response.data.response[0].league.standings[0]);
 
-                // console.log('Scoreboard: ', response.data.response[0].league.standings[0]);
-                const {rank: rank, goalsDiff: goalsDiff, points: points} = response.data.response[0].league.standings[0][0];
-                const { team: { name } } = response.data.response[0].league.standings[0][0];
-                const { played } = response.data.response[0].league.standings[0][0].all;
 
 
-                
-                
 
-                setRowObject(prevState => ({
-                    ...prevState,
-                    position: rank,
-                    points: points,
-                    goalDiff: goalsDiff,
-                    team: name,
-                    played: played
-                }));
+            
 
                 
 
