@@ -1,23 +1,20 @@
 .championsLeauge {
-    width: 5px;
-    height: 5px;
+
     background-color: #00ff00;
 }
 
 .europaLeauge {
-    width: 5px;
-    height: 5px;
     background-color: #00ffff;
 
 }
 
 .relegation {
-    width: 5px;
-    height: 5px;
     background-color: #f00000;
 
 }
 
 .championsLeauge, .europaLeauge, .relegation {
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    width: 2px;
+    height: 25px;
 }
