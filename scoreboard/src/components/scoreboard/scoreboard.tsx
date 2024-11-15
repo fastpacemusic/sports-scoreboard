@@ -38,7 +38,7 @@ const Scoreboard = () => {
                 const response = await axios.request(options);
 
                 setStandings(response.data.response[0].league.standings[0]);
-                console.log("standing", standings);
+                console.log("standing", response.data.response[0].league.standings[0]);
 
                 // console.log('Scoreboard: ', response.data.response[0].league.standings[0]);
                 const {rank: rank, goalsDiff: goalsDiff, points: points} = response.data.response[0].league.standings[0][0];
@@ -57,6 +57,8 @@ const Scoreboard = () => {
                     team: name,
                     played: played
                 }));
+
+                
 
 
             } catch (error) {
@@ -79,9 +81,11 @@ const Scoreboard = () => {
                 <div className="sb-pts num">PTS</div>
                 <div className="sb-gd num">GD</div>
             </div>
-           {/* {standings.map((position: number, index: number) => {
-            <Row key={index} pos={rowObject.position} team={rowObject.team} played={rowObject.played} pts={rowObject.points} gd={rowObject.goalDiff}/>
-           })} */}
+           {standings && standings.map((teamData: any, index: number) => {
+                return(
+                    <Row key={index} pos={teamData.rank} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff}/>
+                );
+           })}
             
 
         </div>

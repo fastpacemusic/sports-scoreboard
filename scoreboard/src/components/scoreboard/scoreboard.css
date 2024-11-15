@@ -1,6 +1,6 @@
 .scoreboard-wrap {
     width:800px;
-    height: 600px;
+    /* height: 600px; */
     background: #455d7a; 
     border-radius: 10px;
     display: flex;
