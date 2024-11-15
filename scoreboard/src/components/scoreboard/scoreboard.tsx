@@ -30,7 +30,7 @@ const Scoreboard = () => {
                 const response = await axios.request(options);
 
                 setStandings(response.data.response[0].league.standings[0]);
-                // console.log("standing", response.data.response[0].league.standings[0]);
+                console.log("standing", response.data.response[0].league.standings[0]);
 
 
 
@@ -62,7 +62,7 @@ const Scoreboard = () => {
             </div>
            {standings && standings.map((teamData: any, index: number) => {
                 return(
-                    <Row key={index} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff}/>
+                    <Row key={index} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff} tournament={teamData.description}/>
                 );
            })}
             

@@ -59,7 +59,7 @@ function App() {
           <div className='logo'></div>
           <div className='name'>{leageName}</div>
           <div className='season'>{season}</div>
-          <DropdownBtn years={[2020]} />
+          {/* <DropdownBtn years={[2020]} /> */}
         </div>
         <Scoreboard />
       </div>

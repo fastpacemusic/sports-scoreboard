@@ -1,0 +1,19 @@
+.championsLeauge {
+    width: 3px;
+    height: 5px;
+    background-color: #00ff00;
+}
+
+.europaLeauge {
+    width: 3px;
+    height: 5px;
+    background-color: #00ffff;
+
+}
+
+.relegation {
+    width: 3px;
+    height: 5px;
+    background-color: #f00000;
+
+}

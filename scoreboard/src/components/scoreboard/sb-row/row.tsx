@@ -1,5 +1,6 @@
 import { log } from "console";
 import "./row.css";
+import LeagueImg from "../../leagueImages/leagueImg";
 
 interface RowData {
     pos: number,
@@ -7,10 +8,11 @@ interface RowData {
     team: string,
     played: number,
     pts: number,
-    gd: number
+    gd: number,
+    tournament: any
 }
 
-const Row = ({pos, logo, team, played, pts, gd}: RowData) => {
+const Row = ({pos, logo, team, played, pts, gd, tournament}: RowData) => {
 
     
 
@@ -22,6 +24,7 @@ const Row = ({pos, logo, team, played, pts, gd}: RowData) => {
             <div className="row-played">{played}</div>
             <div className="row-pts">{pts}</div>
             <div className="row-gd">{gd}</div>
+            {<LeagueImg tournament={tournament} />}
         </div>
     );
 }
