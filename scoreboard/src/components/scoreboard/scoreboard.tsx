@@ -59,8 +59,8 @@ const Scoreboard = () => {
                 <th className="empty"></th>
                 <th className="sb-team">Team</th>
                 <th className="sb-played">PL</th>
-                <th className="sb-pts">PTS</th>
                 <th className="sb-gd">GD</th>
+                <th className="sb-pts">PTS</th>
             </thead>
             <tbody>
                 {standings && standings.map((teamData: any, index: number) => {

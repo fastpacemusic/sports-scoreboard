@@ -23,8 +23,9 @@ const Row = ({pos, logo, team, played, pts, gd, tournament}: RowData) => {
             <img src={logo} className="row-logo" alt="Logo" />
             <td className="row-team">{team}</td>
             <td className="row-played">{played}</td>
-            <td className="row-pts">{pts}</td>
             <td className="row-gd">{gd}</td>
+            <td className="row-pts">{pts}</td>
+
         </tr>
     );
 }
