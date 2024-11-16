@@ -52,22 +52,25 @@ const Scoreboard = () => {
     
 
     return(
-        <div className="scoreboard-wrap">
-            <div className="sb-positions">
-                <div className="sb-pos">#</div>
-                <div className="sb-team">team</div>
-                <div className="sb-played">PL</div>
-                <div className="sb-pts">PTS</div>
-                <div className="sb-gd">GD</div>
-            </div>
-           {standings && standings.map((teamData: any, index: number) => {
-                return(
-                    <Row key={index} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff} tournament={teamData.description}/>
-                );
-           })}
-            
+        <table className="scoreboard-wrap">
+            <thead className="sb-positions">
+                <th className="sb-pos">#</th>
+                <th className="empty"></th>
+                <th className="empty"></th>
 
-        </div>
+                <th className="sb-team">Team</th>
+                <th className="sb-played">PL</th>
+                <th className="sb-pts">PTS</th>
+                <th className="sb-gd">GD</th>
+            </thead>
+            <tbody>
+                {standings && standings.map((teamData: any, index: number) => {
+                        return(
+                            <Row key={index} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff} tournament={teamData.description}/>
+                        );
+                })}
+            </tbody>
+        </table>
     );
 }
 

@@ -1,25 +1,23 @@
 .scoreboard-wrap {
-    width:800px;
-    /* height: 600px; */
-    background: #455d7a; 
+    min-width:800px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%); */
-    
+    border-collapse: collapse;
+    font-size: 0.9em;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 15);
 }
 
-.sb-positions, .rows {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.scoreboard-wrap, th, tr {
+    text-align: left;
+    background: #455d7a; 
+    font-weight: bold;
 }
 
 .sb-positions {
     height: 40px;
-    align-items: center;
     border-bottom: 2px solid  #0C0404;
+}
+
+.sb-pos {
+    width: 5px;
 }

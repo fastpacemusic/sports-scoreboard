@@ -1,9 +1,6 @@
 .rows {
-    width: 100%;
-    height: 40px;
-    align-items: center;
+
     cursor: pointer;
-    display: flex;
 }
 
 .rows:hover {
@@ -11,11 +8,13 @@
     border-radius: 5px;
 }
 
-.row-team {
 
-}
 
 .row-logo {
-    height: 70%;
+    
+    height: 25px;
+}
 
+.row-pos {
+    width: 20px;
 }

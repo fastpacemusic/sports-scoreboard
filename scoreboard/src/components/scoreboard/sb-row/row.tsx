@@ -17,15 +17,15 @@ const Row = ({pos, logo, team, played, pts, gd, tournament}: RowData) => {
     
 
     return (
-        <div className="rows">
+        <tr className="rows">
             {<LeagueImg tournament={tournament} />}
-            <div className="row-pos">{pos}</div>
+            <td className="row-pos">{pos}</td>
             <img src={logo} className="row-logo" alt="Logo" />
-            <div className="row-team">{team}</div>
-            <div className="row-played">{played}</div>
-            <div className="row-pts">{pts}</div>
-            <div className="row-gd">{gd}</div>
-        </div>
+            <td className="row-team">{team}</td>
+            <td className="row-played">{played}</td>
+            <td className="row-pts">{pts}</td>
+            <td className="row-gd">{gd}</td>
+        </tr>
     );
 }
 
