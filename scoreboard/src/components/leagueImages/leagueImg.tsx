@@ -10,10 +10,10 @@ interface images {
 const LeagueImg = ({tournament}: any) => {
 
     const leaugeImages = {
-        championsLeauge: <div className="championsLeauge"></div>,
-        europaLeauge: <div className="europaLeauge"></div>,
-        relegation: <div className="relegation"></div>,
-        premierLeague: <div className="premierLeague"></div>
+        championsLeauge: <td className="championsLeauge"></td>,
+        europaLeauge: <td className="europaLeauge"></td>,
+        relegation: <td className="relegation"></td>,
+        premierLeague: <td className="premierLeague"></td>
     }
 
     const choosingImg = (item: string) => {
