@@ -54,10 +54,9 @@ const Scoreboard = () => {
     return(
         <table className="scoreboard-wrap">
             <thead className="sb-positions">
+                <th className="empty"></th>
                 <th className="sb-pos">#</th>
                 <th className="empty"></th>
-                <th className="empty"></th>
-
                 <th className="sb-team">Team</th>
                 <th className="sb-played">PL</th>
                 <th className="sb-pts">PTS</th>
