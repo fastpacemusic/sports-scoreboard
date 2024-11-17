@@ -9,10 +9,11 @@ interface RowData {
     played: number,
     pts: number,
     gd: number,
-    tournament: any
+    tournament: any,
+    form: string
 }
 
-const Row = ({pos, logo, team, played, pts, gd, tournament}: RowData) => {
+const Row = ({pos, logo, team, played, pts, gd, tournament, form}: RowData) => {
 
     
 
@@ -27,7 +28,7 @@ const Row = ({pos, logo, team, played, pts, gd, tournament}: RowData) => {
             <td className="row-played">{played}</td>
             <td className="row-gd">{gd}</td>
             <td className="row-pts">{pts}</td>
-
+            <td className="row-form">{form}</td>
         </tr>
     );
 }

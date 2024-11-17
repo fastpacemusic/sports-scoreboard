@@ -62,12 +62,13 @@ const Scoreboard = () => {
                     <th className="sb-played">PL</th>
                     <th className="sb-gd">GD</th>
                     <th className="sb-pts">PTS</th>
+                    <th className="sb-form">Form</th>
                 </tr>
             </thead>
             <tbody>
                 {standings && standings.map((teamData: any, index: number) => {
                         return(
-                            <Row key={index} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff} tournament={teamData.description}/>
+                            <Row key={index} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff} tournament={teamData.description} form={teamData.form}/>
                         );
                 })}
             </tbody>
