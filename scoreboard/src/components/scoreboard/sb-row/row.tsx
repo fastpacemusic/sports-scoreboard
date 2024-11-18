@@ -1,6 +1,7 @@
 import { log } from "console";
 import "./row.css";
 import LeagueImg from "../../leagueImages/leagueImg";
+import Form from "../form/form";
 
 interface RowData {
     pos: number,
@@ -15,7 +16,7 @@ interface RowData {
 
 const Row = ({pos, logo, team, played, pts, gd, tournament, form}: RowData) => {
 
-    
+
 
     return (
         <tr className="rows">
@@ -28,7 +29,8 @@ const Row = ({pos, logo, team, played, pts, gd, tournament, form}: RowData) => {
             <td className="row-played">{played}</td>
             <td className="row-gd">{gd}</td>
             <td className="row-pts">{pts}</td>
-            <td className="row-form">{form}</td>
+            <td className="row-form"><Form form={form} /></td>
+
         </tr>
     );
 }

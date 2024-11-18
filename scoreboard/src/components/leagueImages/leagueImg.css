@@ -1,15 +1,15 @@
 .championsLeauge {
 
-    background-color: #00ff00;
+    background-color: var(--color-champions-league);
 }
 
 .europaLeauge {
-    background-color: #00ffff;
+    background-color: var(--color-europa-league);
 
 }
 
 .relegation {
-    background-color: #f00000;
+    background-color: var(--color-relegation);
 
 }
 

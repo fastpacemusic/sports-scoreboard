@@ -1,0 +1,31 @@
+.form-win {
+
+    background-color: #00985f;
+}
+
+.form-draw {
+    background-color: #8d9499;
+
+}
+
+.form-loss {
+    background-color: var(--color-relegation);
+
+}
+
+
+.form-win, .form-draw, .form-loss {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-wrap {
+    display: flex;
+    gap: 4px;
+}

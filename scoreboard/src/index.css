@@ -1,3 +1,16 @@
+html {
+  --color-text: #e3e3ee;
+  --color-text-dark: #555;
+  --color-background-bright: #455d7a;
+  --color-background-dark: #233142;
+  --color-background-hover: #6CA0DC;
+  --color-champions-league: #00ff00;
+  --color-europa-league: #00ffff;
+  --color-relegation: #f00000;
+  --color-draw: #C0C0C0;
+
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

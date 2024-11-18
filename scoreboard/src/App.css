@@ -1,6 +1,6 @@
 body {
-    background: #233142; 
-    color: #e3e3e3;
+    background: var(--color-background-dark); 
+    color: var(--color-text);
     position: relative;
 
 }
@@ -14,7 +14,7 @@ body {
 }
 
 .league-details {
-    background: #455d7a; 
+    background: var( --color-background-bright); 
     width: 400px;
     height: 90px;
     margin-bottom: 40px;
