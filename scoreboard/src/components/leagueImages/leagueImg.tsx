@@ -9,7 +9,7 @@ const LeagueImg = ({tournament}: any) => {
     }
 
     const choosingImg = (item: string) => {
-        return <div className={leaugeImages[item as string] || "premierLeague"}></div>;
+        return <div className={leaugeImages[item] || "premierLeague"}></div>;
     }
 
     return (
