@@ -1,23 +1,22 @@
 import "./form.css";
 
 interface formData {
-    form: any
+    form: string;
 }
 
 const Form = ({form}: formData) => {
 
     const splitForm = form.split('');
 
-
     const seperatedForm = splitForm.map((item: string, index: number) => {
 
         switch (item) {
             case 'W':
-                return <td key={index} className="form-win">W</td>;
+                return <div key={index} className="form-win">W</div>;
             case 'D': 
-                return <td key={index} className="form-draw">D</td>;
+                return <div key={index} className="form-draw">D</div>;
             case 'L': 
-               return <td key={index} className="form-loss">L</td>;
+               return <div key={index} className="form-loss">L</div>;
     
         }
     });
