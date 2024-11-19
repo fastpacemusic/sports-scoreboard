@@ -17,7 +17,7 @@ const TopLeagues = () => {
         bundesliga: ''
       });
 
-      let leagueNames = ['Premier League', 'Serie A', 'Ligue 1', 'Champions League', 'Europa League', 'MLS', 'LaLiga', 'Bundesliga'];
+      let leagueNames = ['Premier League','Champions League', 'Bundesliga', 'Europa League', 'Ligue 1', 'Serie A' ,  'MLS', 'LaLiga'];
       
 
     useEffect(() => {
