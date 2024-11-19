@@ -7,11 +7,11 @@ import { get } from "http";
 const TopLeagues = () => {
 
     const [leagueLogos, setLeagueLogos] = useState<any>({
-        premierLeague: '',
-        serieA: '',
+        premierleague: '',
+        seriea: '',
         ligue1: '',
-        championsLeague: '',
-        europaLeague: '',
+        championsleague: '',
+        europaleague: '',
         mls: '',
         laliga: '',
         bundesliga: ''
@@ -56,14 +56,14 @@ const TopLeagues = () => {
 
                 setLeagueLogos((prevState: any) => ({
                     ...prevState,
-                    premierLeague: getLeagueByName('England', 'Premier League'),
+                    premierleague: getLeagueByName('England', 'Premier League'),
                     bundesliga: getLeagueByName('Germany', 'Bundesliga'),
                     ligue1: getLeagueByName('France', 'Ligue 1'),
                     mls: getLeagueByName('USA', 'Major League Soccer'),
-                    serieA: getLeagueByName('Italy', 'Serie A'),
+                    seriea: getLeagueByName('Italy', 'Serie A'),
                     laliga: getLeagueByName('Spain', 'la liga'),
-                    championsLeague: getLeagueByName('World', 'UEFA Champions League'),
-                    europaLeague: getLeagueByName('World', 'UEFA Europa League')
+                    championsleague: getLeagueByName('World', 'UEFA Champions League'),
+                    europaleague: getLeagueByName('World', 'UEFA Europa League')
                   }));
                   
 
@@ -77,6 +77,12 @@ const TopLeagues = () => {
 
     }, []);
 
+
+
+    // Object.entries(leagueLogos).map(([key, value]) => {
+    //     console.log(`League: ${key}, Logo: ${value}`);
+    //   });
+      console.log(leagueLogos);
 
 
 
