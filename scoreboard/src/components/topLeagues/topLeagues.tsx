@@ -89,14 +89,14 @@ const TopLeagues = () => {
     return (
         <table className="top-leagues">
             <thead>
-                <tr>
-                    <td className="title">Top Leagues</td>
+                <tr className="title-row">
+                    <th className="title" >Top Leagues</th>
                 </tr>
             </thead>
             <tbody>
                 {leagueNames.map((item, index) => (
                     <tr key={index} className="league-row">
-                        <td>
+                        <td className="logo-wrap">
                             <img src={leagueLogos[item.toLowerCase().replace(/\s+/g, '')]}  className="logo" alt="logo"></img>
                         </td>
                         <td className="league-name">{item}</td>
