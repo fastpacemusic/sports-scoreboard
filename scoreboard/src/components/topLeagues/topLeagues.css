@@ -1,0 +1,28 @@
+.top-leagues {
+    width: 250px;
+    height: 50px;
+    background-color: var(--color-background-bright);
+    border-radius: var(--border-radius);
+    color: var(--color-text);
+    border-collapse: collapse;
+}
+
+.title {
+    font-weight: bold;
+    font-size: large;
+    margin-left: 10px;
+
+}
+
+.league-row {
+    cursor: pointer;
+    height: 50px;
+}
+
+.league-row:hover {
+    background-color: var(--color-background-hover);
+}
+
+.logo {
+    height: 25px;
+}

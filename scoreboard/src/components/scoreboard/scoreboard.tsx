@@ -3,6 +3,7 @@ import Row from "./sb-row/row";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import { ApiService } from "../../services/apiService";
 
 
 
@@ -13,32 +14,12 @@ const Scoreboard = () => {
 
 
     useEffect(() => {
-        const options = {
-            method: 'GET',
-            url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
-            params: {
-              league: '39',
-              season: '2024'
-            },
-            headers: {
-              'x-rapidapi-key': '39078bce62msh6328de9fc911fbbp1f2c47jsn26c13a67abc9',
-              'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
-            }
-          };
           const fetchData = async () => {
             try {
-                const response = await axios.request(options);
+                const response = await new ApiService().getScoreBoard();
 
-                setStandings(response.data.response[0].league.standings[0]);
-                console.log("standing", response.data.response[0].league.standings[0]);
-
-
-
-
-            
-
-                
-
+                setStandings(response.league.standings[0]);
+                // console.log("standing", response.data.response[0].league.standings[0]);
 
             } catch (error) {
                 console.error(error);
