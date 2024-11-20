@@ -4,29 +4,3 @@ body {
     position: relative;
 
 }
-
-.league {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.league-details {
-    background: var( --color-background-bright); 
-    width: 400px;
-    height: 90px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-}
-
-.upcoming-games {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
