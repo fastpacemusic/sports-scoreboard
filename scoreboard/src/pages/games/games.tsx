@@ -38,22 +38,25 @@ const Games = () => {
             <thead>
                 <tr>
                     <th className="date">Saturday, November 23, 2024</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr className="fixture">
-                    <td>
+                    <td className="team-row">
+                        <div className="home-team-wrap">
+                            <span className="home-team">Leicester City</span>
+                            <img src="#logo" className="logo" alt="logo" />
+                        </div>
+                        <td className="stadium">Stadium: West Brom</td>
 
-                        <span className="home-team">Leicester City</span>
-                        <img src="#logo" className="logo" alt="logo" />
                     </td>
                     <td className="time">4:00</td>
-                    <td>
+                    <td className="away-team-wrap">
                         <img src="#logo" className="logo" alt="logo" />
                         <span className="away-team">Chelsea</span>
                     </td>
                 </tr>
-                <tr className="stadium"></tr>
             </tbody>
         </table>
     );
