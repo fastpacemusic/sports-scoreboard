@@ -5,6 +5,7 @@ import './App.css';
 import DropdownBtn from './components/dropdownbtn/dropdownbtn';
 import TopLeagues from './components/topLeagues/topLeagues';
 import { ApiService } from './services/apiService';
+import Games from './pages/games/games';
 
 function App() {
 
@@ -43,16 +44,19 @@ function App() {
       <header className="App-header">
       </header>
 
-      <div className='league'>
+      {/* <div className='league'>
         <div className='league-details'>
           <div className='logo'></div>
           <div className='name'>{leageName}</div>
           <div className='season'>{season}</div>
-          {/* <DropdownBtn years={[2020]} /> */}
         </div>
         <Scoreboard />
       </div>
-      <TopLeagues />
+      <TopLeagues /> */}
+      <div className='upcoming-games'>
+        <Games />
+
+      </div>
     </div>
   );
 }

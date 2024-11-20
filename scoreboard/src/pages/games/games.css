@@ -1,0 +1,23 @@
+.upcoming-fixtures {
+    width: 1000px;
+    height: 700px;
+    background-color: var(--color-background-bright);
+    border-radius: var(--border-radius);
+    border-collapse: collapse;
+    box-shadow: var(--box-shadow);
+}   
+
+.upcoming-fixtures, th, tr {
+    text-align: left;
+    font-weight: bold;
+}
+
+.upcoming-fixtures th, .upcoming-fixtures td {
+    padding: 12px 15px;
+}
+
+.date {
+    background-color: var(--color-background-dark);
+    border-radius: var(--border-radius);
+    width: 100%;
+}
