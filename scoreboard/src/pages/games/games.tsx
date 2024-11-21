@@ -1,8 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./games.css";
-import axios from "axios";
+import axios, { all } from "axios";
+import {format} from "date-fns";
 
 const Games = () => {
+
+    const utcDate = new Date("2024-11-23T15:00:00+00:00");
+    const [correctDate, setCorrectDate] = useState(format(utcDate, "EEEE, MMMM dd, yyyy"));
+    const [fixtureTime, setFixtureTime] = useState(format(utcDate, "H:mm"));
+
+    // console.log(correctDate);
+
+
+    const [teams, setTeams] = useState<any>([]);
+
 
     useEffect(() => {
         const options = {
@@ -21,42 +32,58 @@ const Games = () => {
 
           const fetchData = async () => {
                 try {
+                    const utcDateString = format(utcDate, "MM/dd/yyyy");
                     const response = await axios.request(options);
-                    console.log(response.data);
+                    const fixtureData = response.data.response;
+                    // console.log(fixtureData);
+
+                    let teamData = fixtureData.filter((item: any) => {
+                        return format(new Date(item.fixture.date), "MM/dd/yyyy") === utcDateString;
+                    });
+                    setTeams(teamData);
+                    console.log(teams);
+
+
+                    
+
+                    // format(new Date(data.fixture.date), "MM/dd/yyyy") === utcDateString
+
                 } catch (error) {
-                    console.error(error);
+                    // console.error(error);
                 }
           }
           
-
+          fetchData();
       
-    });
+    }, []);
     
 
     return (
         <table className="upcoming-fixtures">
             <thead>
-                <tr>
-                    <th className="date">Saturday, November 23, 2024</th>
+                <tr className="date-wrap">
+                    <th className="date">{correctDate}</th>
                     
                 </tr>
             </thead>
             <tbody>
-                <tr className="fixture">
+                
+                    <tr  className="fixture">
                     <td className="team-row">
                         <div className="home-team-wrap">
                             <span className="home-team">Leicester City</span>
                             <img src="#logo" className="logo" alt="logo" />
                         </div>
-                        <td className="stadium">Stadium: West Brom</td>
+                        <div className="stadium">Stadium: West Brom</div>
 
                     </td>
-                    <td className="time">4:00</td>
+                    <td className="time">{fixtureTime}</td>
                     <td className="away-team-wrap">
                         <img src="#logo" className="logo" alt="logo" />
                         <span className="away-team">Chelsea</span>
                     </td>
-                </tr>
+                    </tr>
+                
             </tbody>
         </table>
     );

@@ -10,13 +10,11 @@
     font-weight: bold;
 }
 
-.upcoming-fixtures, th, .upcoming-fixtures, td {
-    padding: 12px 15px;
-}
+
 
 .date {
     background-color: var(--color-background-dark);
-    /* border-radius: var(--border-radius); */
+    height: 40px;
 }
 
 .stadium {
