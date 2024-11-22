@@ -1,8 +1,8 @@
 .upcoming-fixtures {
-    width: 900px;
     border-radius: var(--border-radius);
     border-collapse: collapse;
     box-shadow: var(--box-shadow);
+    width: 100%;
 }   
 
 .upcoming-fixtures, th, tr {
@@ -10,7 +10,9 @@
     font-weight: bold;
 }
 
-
+.fixture-wrap {
+    width: 900px;
+}
 
 .date {
     background-color: var(--color-background-dark);

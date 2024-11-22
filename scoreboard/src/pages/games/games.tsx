@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./games.css";
 import axios, { all } from "axios";
 import {format} from "date-fns";
+import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
 
 const Games = () => {
 
@@ -16,6 +17,8 @@ const Games = () => {
 
 
     useEffect(() => {
+
+        
         const options = {
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
@@ -49,43 +52,50 @@ const Games = () => {
                     // format(new Date(data.fixture.date), "MM/dd/yyyy") === utcDateString
 
                 } catch (error) {
-                    // console.error(error);
+                    console.error(error);
                 }
           }
           
           fetchData();
       
     }, []);
-    
+
+    // useEffect(() => {
+    //     console.log(teams);
+    // }, [teams]);
+
 
     return (
-        <table className="upcoming-fixtures">
-            <thead>
-                <tr className="date-wrap">
-                    <th className="date">{correctDate}</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                
-                    <tr  className="fixture">
-                    <td className="team-row">
-                        <div className="home-team-wrap">
-                            <span className="home-team">Leicester City</span>
-                            <img src="#logo" className="logo" alt="logo" />
-                        </div>
-                        <div className="stadium">Stadium: West Brom</div>
-
-                    </td>
-                    <td className="time">{fixtureTime}</td>
-                    <td className="away-team-wrap">
-                        <img src="#logo" className="logo" alt="logo" />
-                        <span className="away-team">Chelsea</span>
-                    </td>
+        <div className="fixture-wrap">
+            <HeadlineLeague />
+            <table className="upcoming-fixtures">
+                <thead>
+                    <tr className="date-wrap">
+                        <th className="date">{correctDate}</th>
+                        
                     </tr>
-                
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    
+                        <tr  className="fixture">
+                        <td className="team-row">
+                            <div className="home-team-wrap">
+                                <span className="home-team">Leicester City</span>
+                                <img src="#logo" className="logo" alt="logo" />
+                            </div>
+                            <div className="stadium">Stadium: West Brom</div>
+
+                        </td>
+                        <td className="time">{fixtureTime}</td>
+                        <td className="away-team-wrap">
+                            <img src="#logo" className="logo" alt="logo" />
+                            <span className="away-team">Chelsea</span>
+                        </td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
     );
 }
 

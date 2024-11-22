@@ -1,0 +1,22 @@
+.headline-wrap {
+    background: var(--color-background-bright);
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.headline-wrap .league-name {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.headline-wrap .country {
+    font-size: large;
+}
+
+.headline-league {
+    margin-top: 15px;
+}

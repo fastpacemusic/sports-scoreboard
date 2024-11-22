@@ -4,6 +4,7 @@ import TopLeagues from "../../components/topLeagues/topLeagues";
 
 import "./home.css";
 import { ApiService } from "../../services/apiService";
+import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
 
 
 const Home = () => {
@@ -33,11 +34,7 @@ const Home = () => {
     return (
         <>
             <div className='league'>
-                <div className='league-details'>
-                    <div className='logo'></div>
-                    <div className='name'>{leageName}</div>
-                    <div className='season'>{season}</div>
-                </div>
+                <HeadlineLeague />
                 <Scoreboard />
             </div>
                 <TopLeagues />

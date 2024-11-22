@@ -4,10 +4,12 @@ export interface StandingsData {
     league: {
         name: string;
         standings: any[];
+        country: string;
+        logo: string;
     }
 }
 
-let  scoreboardCache: StandingsData | undefined;
+let  scoreboardCache: Promise<StandingsData> | undefined;
 
 export class ApiService {
     getScoreBoard = (): Promise<StandingsData> => {
@@ -25,12 +27,12 @@ export class ApiService {
               'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
             }
           };
-          return axios.request(options).then(response => {
-            scoreboardCache = response.data.response[0];
-            return scoreboardCache as StandingsData;
+          scoreboardCache = axios.request(options).then(response => {
+            return response.data.response[0] as StandingsData;
           });
+          return scoreboardCache;
         }else {
-            return Promise.resolve(scoreboardCache);
+            return (scoreboardCache);
         }
     }
 }
