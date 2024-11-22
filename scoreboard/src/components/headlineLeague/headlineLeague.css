@@ -13,6 +13,12 @@
     font-weight: bold;
 }
 
+.headline-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
 .headline-wrap .country {
     font-size: large;
 }
