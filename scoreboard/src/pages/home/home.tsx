@@ -35,9 +35,12 @@ const Home = () => {
         <>
             <div className='league'>
                 <HeadlineLeague />
-                <Scoreboard />
-            </div>
+                <div className="league-wrap">
                 <TopLeagues />
+                <Scoreboard />
+                </div>
+            </div>
+                
       </>
     );
 }

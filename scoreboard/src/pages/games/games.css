@@ -1,6 +1,5 @@
 .upcoming-fixtures {
     border-radius: var(--border-radius);
-    border-collapse: collapse;
     box-shadow: var(--box-shadow);
     width: 100%;
 }   

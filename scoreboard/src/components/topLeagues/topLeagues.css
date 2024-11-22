@@ -4,8 +4,6 @@
     background-color: var(--color-background-bright);
     border-radius: var(--border-radius);
     color: var(--color-text);
-    border-collapse: collapse;
-    table-layout: fixed;
 }
 
 .title {

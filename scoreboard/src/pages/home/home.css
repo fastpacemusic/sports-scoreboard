@@ -30,3 +30,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.league-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
