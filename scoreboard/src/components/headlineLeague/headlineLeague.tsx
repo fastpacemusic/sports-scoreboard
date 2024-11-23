@@ -14,8 +14,6 @@ const HeadlineLeague = () => {
         const fetchData = async () => {
           try {
             const response = await new ApiService().getScoreBoard();
-            // console.log(response.data);
-            console.log(111, response);
             setLeagueName(response.league.name);
             setCountry(response.league.country);
             setLogo(response.league.logo);

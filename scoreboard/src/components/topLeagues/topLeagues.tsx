@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./topLeagues.css";
 import axios from "axios";
-import { get } from "http";
+import { ApiService } from "../../services/apiService";
 
 
 const TopLeagues = () => {
@@ -22,35 +22,20 @@ const TopLeagues = () => {
 
     useEffect(() => {
 
-        const options = {
-            method: 'GET',
-            url: 'https://api-football-v1.p.rapidapi.com/v3/leagues',
-            params: {season: '2024'},
-            headers: {
-              'x-rapidapi-key': '39078bce62msh6328de9fc911fbbp1f2c47jsn26c13a67abc9',
-              'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
-            }
-          };
 
           const fetchData = async () => {
 
             try {
-                const response = await axios.request(options);
-                const leagueData = response.data.response;
-                console.log(leagueData);
+                const leagueData = await new ApiService().getAllLeauges();
+                const scoreboardData = await new ApiService().getScoreBoard();
+                console.log("topleagues", leagueData);
                 
                 const getLeagueByName = (countryName: string, leagueName: string) => {
                     const filteredLeagues = leagueData.filter((idxData: any) => {
                         return idxData.country.name === countryName && idxData.league.name.toLowerCase() == leagueName.toLowerCase();
                     });
 
-                    
-                    // if (filteredLeagues) {
-
-                    //     console.log(filteredLeagues[0].league.logo);
-                    // }
-
-                    return filteredLeagues.length > 0 ? filteredLeagues[0].league.logo : '';
+                    return filteredLeagues.length > 0 ? filteredLeagues[0].logo : '';
 
                 }
 
@@ -66,6 +51,7 @@ const TopLeagues = () => {
                     europaleague: getLeagueByName('World', 'UEFA Europa League')
                   }));
                   
+                  
 
             } catch (error) {
                 console.error(error);
@@ -77,12 +63,10 @@ const TopLeagues = () => {
 
     }, []);
 
-
-
     // Object.entries(leagueLogos).map(([key, value]) => {
     //     console.log(`League: ${key}, Logo: ${value}`);
     //   });
-      console.log(leagueLogos);
+      
 
 
 

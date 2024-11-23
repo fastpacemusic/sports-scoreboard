@@ -9,14 +9,26 @@ export interface StandingsData {
     }
 }
 
+export interface LeagueData {
+    country: {
+      code: string;
+      flag: string;
+      name: string;
+    }
+    name: string;
+    logo: string;
+}
+
 let  scoreboardCache: Promise<StandingsData> | undefined;
+
+
 
 //league number 2: Champ League, 39: Prem League, 78: Bundesliga, 3: Europa League, 61: Ligue 1, 140: laliga, 253: mls, 135: serie A
 
 export class ApiService {
     getScoreBoard = (): Promise<StandingsData> => {
         if (!scoreboardCache) {
-            console.log(111);
+            // console.log(111);
         const options = {
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
@@ -37,4 +49,27 @@ export class ApiService {
             return (scoreboardCache);
         }
     }
+
+    getAllLeauges = (): Promise<LeagueData[]> => {
+      
+      const options = {
+        method: 'GET',
+        url: 'https://api-football-v1.p.rapidapi.com/v3/leagues',
+        params: {season: '2024'},
+        headers: {
+          'x-rapidapi-key': '39078bce62msh6328de9fc911fbbp1f2c47jsn26c13a67abc9',
+          'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
+        }
+      };
+      return axios.request(options).then(response => {
+        return response.data.response[0].map((item: any) => {
+          return {
+            name: item.league.name,
+            logo: item.leauge.logo,
+            country: item.country
+          } as LeagueData;
+        });
+      });
+    }
+
 }
