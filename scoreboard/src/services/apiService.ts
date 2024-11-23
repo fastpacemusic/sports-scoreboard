@@ -11,6 +11,8 @@ export interface StandingsData {
 
 let  scoreboardCache: Promise<StandingsData> | undefined;
 
+//league number 2: Champ League, 39: Prem League, 78: Bundesliga, 3: Europa League, 61: Ligue 1, 140: laliga, 253: mls, 135: serie A
+
 export class ApiService {
     getScoreBoard = (): Promise<StandingsData> => {
         if (!scoreboardCache) {
