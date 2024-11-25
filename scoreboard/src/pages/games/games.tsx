@@ -6,7 +6,7 @@ import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
 
 const Games = () => {
 
-    const utcDate = new Date("2024-11-23T15:00:00+00:00");
+    const utcDate = new Date("2024-11-26T12:00:00+00:00");
     const [correctDate, setCorrectDate] = useState(format(utcDate, "EEEE, MMMM dd, yyyy"));
     const [fixtureTime, setFixtureTime] = useState(format(utcDate, "H:mm"));
 
