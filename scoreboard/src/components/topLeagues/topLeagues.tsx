@@ -62,10 +62,6 @@ const TopLeagues = () => {
           fetchData();
 
     }, []);
-
-    // Object.entries(leagueLogos).map(([key, value]) => {
-    //     console.log(`League: ${key}, Logo: ${value}`);
-    //   });
       
 
 
