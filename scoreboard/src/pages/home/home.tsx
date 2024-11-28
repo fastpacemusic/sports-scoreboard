@@ -14,8 +14,8 @@ const Home = () => {
             <div className='league'>
                 <HeadlineLeague leagueNum={39} />
                 <div className="league-wrap">
-                <TopLeagues />
-                <Scoreboard leagueNum={39} />
+                    <TopLeagues />
+                    <Scoreboard leagueNum={39} />
                 
                 </div>
             </div>
