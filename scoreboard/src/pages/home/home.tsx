@@ -12,10 +12,11 @@ const Home = () => {
     return (
         <>
             <div className='league'>
-                <HeadlineLeague />
+                <HeadlineLeague leagueNum={39} />
                 <div className="league-wrap">
                 <TopLeagues />
-                <Scoreboard />
+                <Scoreboard leagueNum={39} />
+                
                 </div>
             </div>
                 

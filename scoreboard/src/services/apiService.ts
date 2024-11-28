@@ -23,17 +23,16 @@ let  scoreboardCache: Promise<StandingsData> | undefined;
 
 
 
-//league number 2: Champ League, 39: Prem League, 78: Bundesliga, 3: Europa League, 61: Ligue 1, 140: laliga, 253: mls, 135: serie A
 
 export class ApiService {
-    getScoreBoard = (): Promise<StandingsData> => {
+    getScoreBoard = (leagueNum: number = 39): Promise<StandingsData> => {
         if (!scoreboardCache) {
             // console.log(111);
         const options = {
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
             params: {
-              league: '39',
+              league: leagueNum,
               season: '2024'
             },
             headers: {

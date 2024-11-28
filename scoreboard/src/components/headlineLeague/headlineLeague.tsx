@@ -2,7 +2,7 @@ import "./headlineLeague.css";
 import { ApiService } from "../../services/apiService";
 import { useEffect, useState } from "react";
 
-const HeadlineLeague = () => {
+const HeadlineLeague = ({leagueNum}: any) => {
 
     const [leageName, setLeagueName] = useState('');
     const [logo, setLogo] = useState('');
@@ -13,7 +13,7 @@ const HeadlineLeague = () => {
       
         const fetchData = async () => {
           try {
-            const response = await new ApiService().getScoreBoard();
+            const response = await new ApiService().getScoreBoard(leagueNum);
             setLeagueName(response.league.name);
             setCountry(response.league.country);
             setLogo(response.league.logo);

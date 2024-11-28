@@ -8,7 +8,7 @@ import { ApiService } from "../../services/apiService";
 
 
 
-const Scoreboard = () => {
+const Scoreboard = ({leagueNum}: any) => {
 
     const [standings, setStandings] = useState<any>();
 
@@ -16,8 +16,8 @@ const Scoreboard = () => {
     useEffect(() => {
           const fetchData = async () => {
             try {
-                const response = await new ApiService().getScoreBoard();
-
+                const response = await new ApiService().getScoreBoard(leagueNum);
+                // console.log(`${response}`);
                 setStandings(response.league.standings[0]);
                 // console.log("standing", response.data.response[0].league.standings[0]);
 
