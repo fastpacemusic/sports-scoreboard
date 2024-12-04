@@ -25,7 +25,7 @@ let  scoreboardCache: Promise<StandingsData> | undefined;
 
 
 export class ApiService {
-    getScoreBoard = (leagueNum: number = 39): Promise<StandingsData> => {
+    getScoreBoard = (leagueNum: number): Promise<StandingsData> => {
         if (!scoreboardCache) {
             // console.log(111);
         const options = {

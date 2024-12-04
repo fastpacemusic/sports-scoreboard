@@ -7,6 +7,7 @@ const HeadlineLeague = ({leagueNum}: any) => {
     const [leageName, setLeagueName] = useState('');
     const [logo, setLogo] = useState('');
     const [country, setCountry] = useState('');
+    const [year, setYear] = useState([]);
 
 
     useEffect(() => {

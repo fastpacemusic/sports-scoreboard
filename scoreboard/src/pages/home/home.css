@@ -5,12 +5,16 @@ body {
 
 }
 
-.league {
-    position: relative;
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.league {
+    position: relative;
+
 }
 
 .league-details {

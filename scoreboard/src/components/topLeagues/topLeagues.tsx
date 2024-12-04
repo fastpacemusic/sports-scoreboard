@@ -3,8 +3,12 @@ import "./topLeagues.css";
 import axios from "axios";
 import { ApiService } from "../../services/apiService";
 
+interface topLeaguesData {
+    sendLeagueID: (data: number) => void;
+}
 
-const TopLeagues = () => {
+
+const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
 
     const [leagueLogos, setLeagueLogos] = useState<any>({
         premierleague: '',
@@ -17,14 +21,20 @@ const TopLeagues = () => {
         bundesliga: ''
       });
 
-      let leagueNames = ['Premier League','Champions League', 'Bundesliga', 'Europa League', 'Ligue 1', 'Serie A' ,  'MLS', 'LaLiga'];
+    //   let leagueNames = ['Premier League','Champions League', 'Bundesliga', 'Europa League', 'Ligue 1', 'Serie A' ,  'MLS', 'LaLiga'];
     //   league number 2: Champ League, 39: Prem League, 78: Bundesliga, 3: Europa League, 61: Ligue 1, 140: laliga, 253: mls, 135: serie A
-      let leagueNum = [39, 2, 78, 3, 61, 135, 253, 140];
 
-      const handleClick = (num: number[]): number[] => {
-        // await new ApiService().getScoreBoard(leagueNumID[index])
-        return num.map((item) => item);
-      }
+    let leagueInfo = [
+        {leagueName: "Premier League", num: 39, logo: ''},
+        {leagueName: "Champions League", num: 2, logo: ''},
+        {leagueName: "Bundesliga", num: 78, logo: ''},
+        {leagueName: "Europa League", num: 3, logo: ''},
+        {leagueName: "Ligue 1", num: 61, logo: ''},
+        {leagueName: "Serie A", num: 135, logo: ''},
+        {leagueName: "MLS", num: 253, logo: ''},
+        {leagueName: "LaLiga", num: 140, logo: ''},
+    ];
+    
 
     useEffect(() => {
 
@@ -33,7 +43,7 @@ const TopLeagues = () => {
 
             try {
                 const leagueData = await new ApiService().getAllLeauges();
-
+                
                 
                 const getLeagueByName = (countryName: string, leagueName: string) => {
                     const filteredLeagues = leagueData.filter((idxData: any) => {
@@ -79,12 +89,12 @@ const TopLeagues = () => {
                 </tr>
             </thead>
             <tbody>
-                {leagueNames.map((item, index) => (
-                    <tr key={index} className="league-row" onClick={() => {handleClick(leagueNum)}}                                                                                                                                                >
+                {leagueInfo.map((item: any, index: number) => (
+                    <tr key={index} className="league-row" onClick={() => {sendLeagueID(item.num)}}                                                                                                                                                >
                         <td className="logo-wrap">
-                            <img src={leagueLogos[item.toLowerCase().replace(/\s+/g, '')]}  className="logo" alt="logo"></img>
+                            <img src={leagueLogos[item.leagueName.toLowerCase().replace(/\s+/g, '')]}  className="logo" alt="logo"></img>
                         </td>
-                        <td className="league-name">{item}</td>
+                        <td className="league-name">{item.leagueName}</td>
                     </tr>
                 ))}
 
