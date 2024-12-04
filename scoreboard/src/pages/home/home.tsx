@@ -4,29 +4,49 @@ import TopLeagues from "../../components/topLeagues/topLeagues";
 import "./home.css";
 import { ApiService } from "../../services/apiService";
 import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 
 const Home = () => {
+    const [searchParams] = useSearchParams();
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    const [num, setNum] = useState(39);
+    const [num, setNum] = useState<any>(searchParams.get('league') || 39);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const newLeague = searchParams.get("league");
+        setNum(newLeague);
+      }, [location.search]);
 
     const leagueID = (data: number) => {
-        setNum(data);
+        const params = new URLSearchParams(location.search);
+
+        // Update or add the 'league' query parameter
+        params.set("league", data.toString());
+    
+        // Update the URL with the new query parameter without reloading the page
+        navigate(`${location.pathname}?${params.toString()}`);
+
+        // window.location.assign(`http://localhost:3000/?league=${data}`);
+        // setNum(data);
     };
 
-    const params = new URLSearchParams();
-    params.append('league', `${num}`);
-    const queryString = params.toString();
-    const url = `http://localhost:3000/?${queryString}`;
-    const currentUrl = window.location.href;
-
+   
+    // params.append('league', `${num}`);
+    // const queryString = params.toString();
+    // const url = `http://localhost:3000/?${queryString}`;
+    // const currentUrl = window.location.href;
     
 
-    if (currentUrl !== url) {
-        window.location.assign(url);
-    } else {
-        console.log('URL is already the same. No need to reload.');
-    }
+    // console.log(params.get('league'));
+
+    // if (currentUrl !== url) {
+    //     window.location.assign(url);
+    // } else {
+    //     console.log('URL is already the same. No need to reload.');
+    // }
 
     // console.log(url);
 

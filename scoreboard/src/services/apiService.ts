@@ -26,7 +26,7 @@ let  scoreboardCache: Promise<StandingsData> | undefined;
 
 export class ApiService {
     getScoreBoard = (leagueNum: number): Promise<StandingsData> => {
-        if (!scoreboardCache) {
+        // if (!scoreboardCache) {
             // console.log(111);
         const options = {
             method: 'GET',
@@ -44,9 +44,9 @@ export class ApiService {
             return response.data.response[0] as StandingsData;
           });
           return scoreboardCache;
-        }else {
-            return (scoreboardCache);
-        }
+    //     }else {
+    //         return (scoreboardCache);
+    //     }
     }
 
     getAllLeauges = (): Promise<LeagueData[]> => {

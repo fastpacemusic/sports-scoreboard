@@ -9,22 +9,20 @@ const HeadlineLeague = ({leagueNum}: any) => {
     const [country, setCountry] = useState('');
     const [year, setYear] = useState([]);
 
+    const fetchData = async (leagueNum: any) => {
+      try {
+        const response = await new ApiService().getScoreBoard(leagueNum);
+        setLeagueName(response.league.name);
+        setCountry(response.league.country);
+        setLogo(response.league.logo);
+      } catch (error) {
+        console.error(error);
+      }
+    }
 
-    useEffect(() => {
-      
-        const fetchData = async () => {
-          try {
-            const response = await new ApiService().getScoreBoard(leagueNum);
-            setLeagueName(response.league.name);
-            setCountry(response.league.country);
-            setLogo(response.league.logo);
-          } catch (error) {
-            console.error(error);
-          }
-        }
-    
-        fetchData();
-      }, []);
+    useEffect(() => {    
+        fetchData(leagueNum);
+      }, [leagueNum]);
 
 
 
