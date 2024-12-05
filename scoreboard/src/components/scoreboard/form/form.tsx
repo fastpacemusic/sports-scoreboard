@@ -10,8 +10,6 @@ const Form = ({form}: formData) => {
 
     const lastGame = splitForm.length - 1;
 
-    console.log(splitForm);
-
     const seperatedForm = splitForm.map((item: string, index: number) => {
 
         const isLastGame = index === lastGame;

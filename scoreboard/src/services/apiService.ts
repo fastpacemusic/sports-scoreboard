@@ -61,10 +61,12 @@ export class ApiService {
         }
       };
       return axios.request(options).then(response => {
-        return response.data.response[0].map((item: any) => {
+        // console.log(response.data.response);
+        return response.data.response.map((item: any) => {
+          // console.log(item);
           return {
             name: item.league.name,
-            logo: item.leauge.logo,
+            logo: item.league.logo,
             country: item.country
           } as LeagueData;
         });

@@ -25,17 +25,17 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
     //   league number 2: Champ League, 39: Prem League, 78: Bundesliga, 3: Europa League, 61: Ligue 1, 140: laliga, 253: mls, 135: serie A
 
     let leagueInfo = [
-        {leagueName: "Premier League", num: 39, logo: ''},
-        {leagueName: "Champions League", num: 2, logo: ''},
-        {leagueName: "Bundesliga", num: 78, logo: ''},
-        {leagueName: "Europa League", num: 3, logo: ''},
-        {leagueName: "Ligue 1", num: 61, logo: ''},
-        {leagueName: "Serie A", num: 135, logo: ''},
-        {leagueName: "MLS", num: 253, logo: ''},
-        {leagueName: "LaLiga", num: 140, logo: ''},
+        {leagueName: "Premier League", num: 39, logo: leagueLogos.premierleague},
+        {leagueName: "Champions League", num: 2, logo: leagueLogos.championsleague},
+        {leagueName: "Bundesliga", num: 78, logo: leagueLogos.bundesliga},
+        {leagueName: "Europa League", num: 3, logo: leagueLogos.europaleague},
+        {leagueName: "Ligue 1", num: 61, logo: leagueLogos.ligue1},
+        {leagueName: "Serie A", num: 135, logo: leagueLogos.seriea},
+        {leagueName: "MLS", num: 253, logo: leagueLogos.mls},
+        {leagueName: "LaLiga", num: 140, logo: leagueLogos.laliga},
     ];
     
-
+    console.log(leagueInfo[0].logo);
     useEffect(() => {
 
 
@@ -47,7 +47,7 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
                 
                 const getLeagueByName = (countryName: string, leagueName: string) => {
                     const filteredLeagues = leagueData.filter((idxData: any) => {
-                        return idxData.country.name === countryName && idxData.league.name.toLowerCase() == leagueName.toLowerCase();
+                        return idxData.country.name === countryName && idxData.name.toLowerCase() == leagueName.toLowerCase();
                     });
 
                     return filteredLeagues.length > 0 ? filteredLeagues[0].logo : '';
@@ -66,7 +66,7 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
                     europaleague: getLeagueByName('World', 'UEFA Europa League')
                   }));
                   
-                  console.log('1111', leagueData);
+                  
 
             } catch (error) {
                 console.error(error);
@@ -92,7 +92,7 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
                 {leagueInfo.map((item: any, index: number) => (
                     <tr key={index} className="league-row" onClick={() => {sendLeagueID(item.num)}}                                                                                                                                                >
                         <td className="logo-wrap">
-                            <img src={leagueLogos[item.leagueName.toLowerCase().replace(/\s+/g, '')]}  className="logo" alt="logo"></img>
+                            <img src={item.logo}  className="logo" alt="logo"></img>
                         </td>
                         <td className="league-name">{item.leagueName}</td>
                     </tr>
