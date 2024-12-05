@@ -29,7 +29,7 @@ const HeadlineLeague = ({leagueNum}: any) => {
     
 
     return(
-        <div className="headline-wrap">
+        <div className="headline-wrap panel">
             <img src={logo} className="headline-logo" alt="logo" />
             <div className="headline-league">
                 <div className="league-name">{leageName}</div>

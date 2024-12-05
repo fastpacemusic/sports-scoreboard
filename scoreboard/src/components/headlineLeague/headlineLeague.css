@@ -1,7 +1,5 @@
 .headline-wrap {
-    background: var(--color-background-bright);
     height: 150px;
-    border-radius: 10px;
     display: flex;
     flex-direction: row;
     gap: 30px;

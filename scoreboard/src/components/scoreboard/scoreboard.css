@@ -1,7 +1,6 @@
 .scoreboard-wrap {
     color: var(--color-text);
     min-width:800px;
-    border-radius: var(--border-radius);
     border-collapse: collapse;
     font-size: 0.9em;
     overflow: hidden;
@@ -10,7 +9,6 @@
 
 .scoreboard-wrap, th, tr {
     text-align: left;
-    background: var( --color-background-bright); 
     font-weight: bold;
 }
 

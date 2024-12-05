@@ -58,7 +58,6 @@ const Home = () => {
                 <div className="league-wrap">
                     <TopLeagues sendLeagueID={leagueID}/>
                     <Scoreboard leagueNum={num} />
-                
                 </div>
             </div>
                 

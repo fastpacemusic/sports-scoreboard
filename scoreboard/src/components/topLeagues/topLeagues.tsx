@@ -81,7 +81,8 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
 
 
     return (
-        <table className="top-leagues">
+        
+        <table className="top-leagues panel">
             <thead>
                 <tr className="title-row">
                     <th className="title" >Top Leagues</th>
@@ -102,6 +103,7 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
             </tbody>
             
         </table>
+        
     );
 }
 

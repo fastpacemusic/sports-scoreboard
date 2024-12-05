@@ -35,7 +35,7 @@ const Scoreboard = ({leagueNum}: any) => {
     
 
     return(
-        <table className="scoreboard-wrap">
+        <table className="scoreboard-wrap panel">
             <thead className="sb-positions">
                 <tr className="title-wrap">
                     <th className="empty"></th>

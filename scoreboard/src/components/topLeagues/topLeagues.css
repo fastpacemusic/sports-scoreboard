@@ -1,8 +1,7 @@
 .top-leagues {
     width: 250px;
     height: 50px;
-    background-color: var(--color-background-bright);
-    border-radius: var(--border-radius);
+    
     color: var(--color-text);
     border-collapse: collapse;
 }
