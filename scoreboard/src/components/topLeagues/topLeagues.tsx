@@ -35,7 +35,6 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
         {leagueName: "LaLiga", num: 140, logo: leagueLogos.laliga},
     ];
     
-    console.log(leagueInfo[0].logo);
     useEffect(() => {
 
 
