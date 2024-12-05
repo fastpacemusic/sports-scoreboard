@@ -66,7 +66,7 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
                     europaleague: getLeagueByName('World', 'UEFA Europa League')
                   }));
                   
-                  
+                  console.log('1111', leagueData);
 
             } catch (error) {
                 console.error(error);

@@ -8,16 +8,22 @@ const Form = ({form}: formData) => {
 
     const splitForm = form.split('');
 
+    const lastGame = splitForm.length - 1;
+
+    console.log(splitForm);
+
     const seperatedForm = splitForm.map((item: string, index: number) => {
+
+        const isLastGame = index === lastGame;
 
         switch (item) {
             case 'W':
-                return <div key={index} className="form-win">W</div>;
+                return <div key={index} style={{border: isLastGame ? "2px solid black" : "none"}} className="form-win">W</div>;
             case 'D': 
-                return <div key={index} className="form-draw">D</div>;
+                return <div key={index} style={{border: isLastGame ? "2px solid black" : "none"}} className="form-draw">D</div>;
             case 'L': 
-               return <div key={index} className="form-loss">L</div>;
-    
+               return <div key={index} style={{border: isLastGame ? "2px solid black" : "none"}} className="form-loss">L</div>;
+            
         }
     });
 
