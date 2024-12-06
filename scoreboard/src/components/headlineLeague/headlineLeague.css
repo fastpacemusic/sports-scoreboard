@@ -4,6 +4,7 @@
     flex-direction: row;
     gap: 30px;
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 .headline-wrap .league-name {
