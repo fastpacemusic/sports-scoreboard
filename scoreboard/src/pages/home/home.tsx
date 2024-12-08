@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import Scoreboard from "../../components/scoreboard/scoreboard";
 import TopLeagues from "../../components/topLeagues/topLeagues";
 import "./home.css";
-import { ApiService } from "../../services/apiService";
 import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import LeagueGames from "../../components/leagueGames/leagueGames";
 import ArrowButton from "../../components/arrowButton/arrowButton";
-
+import LeftArrow from "../../icons/arrows/left-arrow.svg";
+import RightArrow from "../../icons/arrows/right-arrow.svg";
 
 const Home = () => {
     const [searchParams] = useSearchParams();
@@ -30,42 +30,21 @@ const Home = () => {
     
         // Update the URL with the new query parameter without reloading the page
         navigate(`${location.pathname}?${params.toString()}`);
-
-        // window.location.assign(`http://localhost:3000/?league=${data}`);
-        // setNum(data);
     };
-
-   
-    // params.append('league', `${num}`);
-    // const queryString = params.toString();
-    // const url = `http://localhost:3000/?${queryString}`;
-    // const currentUrl = window.location.href;
-    
-
-    // console.log(params.get('league'));
-
-    // if (currentUrl !== url) {
-    //     window.location.assign(url);
-    // } else {
-    //     console.log('URL is already the same. No need to reload.');
-    // }
-
-    // console.log(url);
-
 
     return (
         <div className="home">
             <div className='league'>
                 <HeadlineLeague leagueNum={num} />
                 <div className="matches-wrap panel">
-                    <ArrowButton arrow={<img src="" alt="" />}/>
+                    <ArrowButton direction="left" onClick={() => {console.log("left button")}}/>
                     <div className="matches">
                         <LeagueGames />
                         <LeagueGames />
                         <LeagueGames />                     
                     </div>
 
-                    <ArrowButton arrow={"/icons/arrows/left-arrow.svg"} />
+                    <ArrowButton direction="right" onClick={() => {console.log("right button")}} />
                 </div>
                 <div className="league-wrap">
                     <TopLeagues sendLeagueID={leagueID}/>

@@ -15,10 +15,7 @@ const Scoreboard = ({leagueNum}: any) => {
     const fetchData = async (leagueNum: any) => {
         try {
             const response = await new ApiService().getScoreBoard(leagueNum);
-            // console.log(`${response}`);
             setStandings(response.league.standings[0]);
-            // console.log("standing", response.data.response[0].league.standings[0]);
-
         } catch (error) {
             console.error(error);
         }

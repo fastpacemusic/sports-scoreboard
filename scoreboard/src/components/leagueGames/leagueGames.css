@@ -1,7 +1,12 @@
 .leagueGames {
     width: 300px;
-    height: 150px;
+    height: 130px;
     cursor: pointer;
     background: var(--color-background-dark);
-    border: 2px solid black;
+    /* border: 2px solid black; */
+
+}
+
+.leagueGames:hover {
+    background-color: var(--color-background-hover);
 }

@@ -3,6 +3,7 @@ import "./topLeagues.css";
 import axios from "axios";
 import { ApiService } from "../../services/apiService";
 
+
 interface topLeaguesData {
     sendLeagueID: (data: number) => void;
 }
@@ -20,9 +21,6 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
         laliga: '',
         bundesliga: ''
       });
-
-    //   let leagueNames = ['Premier League','Champions League', 'Bundesliga', 'Europa League', 'Ligue 1', 'Serie A' ,  'MLS', 'LaLiga'];
-    //   league number 2: Champ League, 39: Prem League, 78: Bundesliga, 3: Europa League, 61: Ligue 1, 140: laliga, 253: mls, 135: serie A
 
     let leagueInfo = [
         {leagueName: "Premier League", num: 39, logo: leagueLogos.premierleague},

@@ -48,6 +48,7 @@ body {
     position: relative;
     align-items: center;
     margin-bottom: 30px;
+    height: 200px;
 }
 
 .matches {

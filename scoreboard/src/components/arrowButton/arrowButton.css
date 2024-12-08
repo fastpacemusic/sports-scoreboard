@@ -1,9 +1,15 @@
-.arrow-button {
+.arrow-svg {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
+    background-color: var( --color-draw);   
+    color: black; 
 }
 
-.arrow-button:hover {
+
+
+.arrow-svg:hover {
+    background-color: var(--color-background-hover);
+    color: white;
 }
