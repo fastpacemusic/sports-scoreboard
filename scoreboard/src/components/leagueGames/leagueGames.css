@@ -1,0 +1,7 @@
+.leagueGames {
+    width: 300px;
+    height: 150px;
+    cursor: pointer;
+    background: var(--color-background-dark);
+    border: 2px solid black;
+}

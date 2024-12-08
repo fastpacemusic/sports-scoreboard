@@ -1,7 +1,27 @@
 .game {
-    width: 100px;
+    width: 140px;
     height: 100%;
     border-right: 2px solid var(--color-background-dark);
     border-left: 2px solid var(--color-background-dark);
     cursor: pointer;
+    font-size: small;
+}
+
+.team-wrap {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.home-team, .away-team {
+    display: flex;
+    flex-direction: row;
+}
+
+.team-info {
+
+}
+
+.home-points, .away-points {
+
 }

@@ -1,24 +1,23 @@
-import "./game.css";
+import "./leagueGames.css";
 
-const Game = () => {
+
+const LeagueGames = () => {
 
 
     return(
-        <div className="game">
-           <span className="game-status">FT</span> 
+        <div className="leagueGames panel">
             <ul className="team-wrap">
                 <li className="home-team">
                     <img src="" alt="logo" className="home-logo"/>
                     <div className="team-info">
-                        <span className="home-initials">MC</span>
-                        <span className="home-points">2</span>
+                        <span className="home-name">liverpool</span>
                     </div>
                 </li>
+                <span className="time">8:30</span>
                 <li className="away-team">
                     <img src="" alt="logo" className="away-logo"/>
                     <div className="team-info">
-                        <span className="away-initials">MU</span>
-                        <span className="away-points">0</span>
+                        <span className="away-name">Fulham</span>
                     </div>
                 </li>
             </ul>
@@ -26,4 +25,4 @@ const Game = () => {
     );
 }
 
-export default Game;
+export default LeagueGames;

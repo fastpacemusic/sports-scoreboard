@@ -40,3 +40,17 @@ body {
     flex-direction: row;
     gap: 30px;
 }
+
+.matches-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.matches {
+    display: flex;
+    flex-direction: row;
+}

@@ -5,6 +5,8 @@ import "./home.css";
 import { ApiService } from "../../services/apiService";
 import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import LeagueGames from "../../components/leagueGames/leagueGames";
+import ArrowButton from "../../components/arrowButton/arrowButton";
 
 
 const Home = () => {
@@ -55,6 +57,16 @@ const Home = () => {
         <div className="home">
             <div className='league'>
                 <HeadlineLeague leagueNum={num} />
+                <div className="matches-wrap panel">
+                    <ArrowButton arrow={<img src="" alt="" />}/>
+                    <div className="matches">
+                        <LeagueGames />
+                        <LeagueGames />
+                        <LeagueGames />                     
+                    </div>
+
+                    <ArrowButton arrow={"/icons/arrows/left-arrow.svg"} />
+                </div>
                 <div className="league-wrap">
                     <TopLeagues sendLeagueID={leagueID}/>
                     <Scoreboard leagueNum={num} />
