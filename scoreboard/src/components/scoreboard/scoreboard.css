@@ -4,7 +4,7 @@
     border-collapse: collapse;
     font-size: 0.9em;
     overflow: hidden;
-    box-shadow: var(--box-shadow);
+
 }
 
 .scoreboard-wrap, th, tr {
