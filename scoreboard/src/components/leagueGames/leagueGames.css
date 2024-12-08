@@ -10,3 +10,13 @@
 .leagueGames:hover {
     background-color: var(--color-background-hover);
 }
+.team-wrap {
+    display: flex;
+    flex-direction: row; 
+}
+
+.home-team, .away-team  {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}

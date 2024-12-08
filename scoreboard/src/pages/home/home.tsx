@@ -6,8 +6,7 @@ import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import LeagueGames from "../../components/leagueGames/leagueGames";
 import ArrowButton from "../../components/arrowButton/arrowButton";
-import LeftArrow from "../../icons/arrows/left-arrow.svg";
-import RightArrow from "../../icons/arrows/right-arrow.svg";
+
 
 const Home = () => {
     const [searchParams] = useSearchParams();
