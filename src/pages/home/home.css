@@ -54,4 +54,5 @@ body {
 .matches {
     display: flex;
     flex-direction: row;
+    gap: 15px;
 }

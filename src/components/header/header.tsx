@@ -1,4 +1,3 @@
-import Game from "./game/game";
 import "./header.css";
 
 const Header = () => {
