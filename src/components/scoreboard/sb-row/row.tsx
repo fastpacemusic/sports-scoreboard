@@ -3,6 +3,7 @@ import "./row.css";
 import LeagueImg from "../../leagueImages/leagueImg";
 import Form from "../form/form";
 import TeamInfo from "../../../pages/teamInfo/teamInfo";
+import { useNavigate } from "react-router-dom";
 
 interface RowData {
     pos: number,
@@ -17,8 +18,15 @@ interface RowData {
 
 const Row = ({pos, logo, team, played, pts, gd, tournament, form}: RowData) => {
 
+    const navigate = useNavigate();
+
+    const handleRowClick = () => {
+        navigate('./team-info', {state: { pos, logo, team, played, pts, gd, tournament, form } });
+    }
+
+
     return (
-        <tr className="rows" onClick={() => {<TeamInfo />}}>
+        <tr className="rows" onClick={handleRowClick}>
             <td>{<LeagueImg tournament={tournament} />}</td>
             <td className="row-pos">{pos}</td>
             <td className="row-logo-wrap">
