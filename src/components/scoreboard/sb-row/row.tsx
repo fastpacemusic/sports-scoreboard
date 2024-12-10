@@ -2,6 +2,7 @@ import { log } from "console";
 import "./row.css";
 import LeagueImg from "../../leagueImages/leagueImg";
 import Form from "../form/form";
+import TeamInfo from "../../../pages/teamInfo/teamInfo";
 
 interface RowData {
     pos: number,
@@ -17,7 +18,7 @@ interface RowData {
 const Row = ({pos, logo, team, played, pts, gd, tournament, form}: RowData) => {
 
     return (
-        <tr className="rows" onClick={() => {console.log(team)}}>
+        <tr className="rows" onClick={() => {<TeamInfo />}}>
             <td>{<LeagueImg tournament={tournament} />}</td>
             <td className="row-pos">{pos}</td>
             <td className="row-logo-wrap">
