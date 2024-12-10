@@ -11,15 +11,13 @@ interface RowData {
     pts: number,
     gd: number,
     tournament: any,
-    form: string
+    form: string,
 }
 
 const Row = ({pos, logo, team, played, pts, gd, tournament, form}: RowData) => {
 
-
-
     return (
-        <tr className="rows">
+        <tr className="rows" onClick={() => {console.log(team)}}>
             <td>{<LeagueImg tournament={tournament} />}</td>
             <td className="row-pos">{pos}</td>
             <td className="row-logo-wrap">

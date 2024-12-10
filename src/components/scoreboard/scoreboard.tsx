@@ -29,6 +29,7 @@ const Scoreboard = ({leagueNum}: any) => {
 
     }, [leagueNum]);
 
+
     
 
     return(

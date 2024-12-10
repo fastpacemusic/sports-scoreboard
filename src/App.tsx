@@ -3,6 +3,7 @@ import Games from './pages/games/games';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './pages/home/home';
 import Header from './components/header/header';
+import TeamInfo from './pages/teamInfo/teamInfo';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Route index element = {<Home />} />
           <Route path='/home' element = {<Home />} />
           <Route path='/fixtures' element = {<Games />} />
+          <Route path='/teamdata' element = {<TeamInfo />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,5 +1,5 @@
 .headline-wrap {
-    height: 150px;
+    height: var(--head-height);
     display: flex;
     flex-direction: row;
     gap: 30px;
