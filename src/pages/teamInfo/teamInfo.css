@@ -1,3 +1,15 @@
 .teamInfo-wrap {
     position: relative;
 }
+
+.team-form {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 30px;
+    height: 120px;
+}
+
+.team-form-txt {
+    font-size: large;
+}
