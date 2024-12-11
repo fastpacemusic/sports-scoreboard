@@ -10,7 +10,7 @@ const TeamInfo = () =>  {
 
 
     return (
-        <div className="teamInfo-wrap panel">
+        <div className="teamInfo-wrap">
             <HeadlineLeague leagueNum="39" />
             <Scoreboard leagueNum="39" />
 
