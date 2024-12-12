@@ -1,6 +1,7 @@
 import "./headlineLeague.css";
 import { ApiService } from "../../services/apiService";
 import { useEffect, useState } from "react";
+import Loading from "../loading/loading";
 
 interface HeadlineData {
   leagueNum?: number,

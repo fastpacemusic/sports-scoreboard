@@ -7,9 +7,9 @@ import Form from "../../components/scoreboard/form/form";
 const TeamInfo = () =>  {
 
     const location = useLocation();
-    const { pos, logo, team, played, pts, gd, tournament, form, leagueNum } = location.state || {};
+    const { pos, logo, team, played, pts, gd, tournament, form, leagueNumber } = location.state || {};
 
-    console.log(logo);
+    console.log(leagueNumber);
 
     return (
         <div className="teamInfo-wrap">
@@ -18,7 +18,7 @@ const TeamInfo = () =>  {
                 <span className="team-form-txt">Team Form</span>
                 <Form form={form}/>
             </div>
-            <Scoreboard leagueNum={leagueNum} />
+            <Scoreboard leagueNum={leagueNumber} />
 
         </div>
     );

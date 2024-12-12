@@ -30,7 +30,6 @@ const Scoreboard = ({leagueNum}: any) => {
     }, [leagueNum]);
 
 
-    
 
     return(
         <table className="scoreboard-wrap panel">
@@ -49,7 +48,7 @@ const Scoreboard = ({leagueNum}: any) => {
             <tbody>
                 {standings && standings.map((teamData: any, index: number) => {
                         return(
-                            <Row key={index} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff} tournament={teamData.description} form={teamData.form} leagueNum={leagueNum}/>
+                            <Row key={index} leagueNumber={leagueNum} pos={teamData.rank} logo={teamData.team.logo} team={teamData.team.name} played={teamData.all.played} pts={teamData.points} gd={teamData.goalsDiff} tournament={teamData.description} form={teamData.form} />
                         );
                 })}
             </tbody>

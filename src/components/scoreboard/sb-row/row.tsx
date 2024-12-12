@@ -14,15 +14,15 @@ interface RowData {
     gd: number,
     tournament: any,
     form: string,
-    leagueNum: () => void;
+    leagueNumber: number
 }
 
-const Row = ({pos, logo, team, played, pts, gd, tournament, form, leagueNum}: RowData) => {
+const Row = ({pos, logo, team, played, pts, gd, tournament, form, leagueNumber}: RowData) => {
 
     const navigate = useNavigate();
 
     const handleRowClick = () => {
-        navigate('./team-info', {state: { pos, logo, team, played, pts, gd, tournament, form, leagueNum } });
+        navigate('./team-info', {state: { pos, logo, team, played, pts, gd, tournament, form, leagueNumber } });
     }
 
 
