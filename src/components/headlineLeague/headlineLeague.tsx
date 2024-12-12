@@ -2,19 +2,32 @@ import "./headlineLeague.css";
 import { ApiService } from "../../services/apiService";
 import { useEffect, useState } from "react";
 
-const HeadlineLeague = ({leagueNum}: any) => {
+interface HeadlineData {
+  leagueNum?: number,
+  team?: string,
+  headlineLogo?: string,
+  headlineCountry?: string
+}
 
-    const [leageName, setLeagueName] = useState('');
-    const [logo, setLogo] = useState('');
-    const [country, setCountry] = useState('');
-    const [year, setYear] = useState([]);
+const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
+
+    const [name, setName] = useState<string>('');
+    const [logo, setLogo] = useState<string>('');
+    const [country, setCountry] = useState<string>('');
 
     const fetchData = async (leagueNum: any) => {
       try {
         const response = await new ApiService().getScoreBoard(leagueNum);
-        setLeagueName(response.league.name);
+        setName(response.league.name);
         setCountry(response.league.country);
         setLogo(response.league.logo);
+        
+        // else {
+        //   setName(team ?? "undefined team");
+        //   setLogo(headlineLogo ?? "no logo");
+        //   setCountry(response.league.country);
+        // }
+
       } catch (error) {
         console.error(error);
       }
@@ -32,7 +45,7 @@ const HeadlineLeague = ({leagueNum}: any) => {
         <div className="headline-wrap panel">
             <img src={logo} className="headline-logo" alt="logo" />
             <div className="headline-league">
-                <div className="league-name">{leageName}</div>
+                <div className="league-name">{name}</div>
                 <div className="country">{country}</div>
             </div>
         </div>

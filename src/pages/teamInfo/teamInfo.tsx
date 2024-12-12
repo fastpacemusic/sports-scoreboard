@@ -13,7 +13,7 @@ const TeamInfo = () =>  {
 
     return (
         <div className="teamInfo-wrap">
-            <HeadlineLeague leagueNum="39" />
+            <HeadlineLeague team={team} headlineLogo={logo} />
             <div className="team-form panel">
                 <span className="team-form-txt">Team Form</span>
                 <Form form={form}/>
