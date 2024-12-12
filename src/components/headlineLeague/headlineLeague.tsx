@@ -6,7 +6,6 @@ interface HeadlineData {
   leagueNum?: number,
   team?: string,
   headlineLogo?: string,
-  headlineCountry?: string
 }
 
 const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
@@ -18,15 +17,14 @@ const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
     const fetchData = async (leagueNum: any) => {
       try {
         const response = await new ApiService().getScoreBoard(leagueNum);
-        setName(response.league.name);
-        setCountry(response.league.country);
-        setLogo(response.league.logo);
-        
-        // else {
-        //   setName(team ?? "undefined team");
-        //   setLogo(headlineLogo ?? "no logo");
-        //   setCountry(response.league.country);
-        // }
+        if (leagueNum) {
+            setName(response.league.name);
+            setCountry(response.league.country);
+            setLogo(response.league.logo);
+        } else {
+          setName(team ?? "unavailable");
+          setLogo(headlineLogo ?? "unavailable");
+        }
 
       } catch (error) {
         console.error(error);
