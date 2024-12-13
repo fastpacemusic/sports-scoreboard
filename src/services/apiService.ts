@@ -49,7 +49,7 @@ export class ApiService {
     //     }
     }
 
-    getAllLeauges = (): Promise<LeagueData[]> => {
+    getAllLeagues = (): Promise<LeagueData[]> => {
       
       const options = {
         method: 'GET',

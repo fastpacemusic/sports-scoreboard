@@ -1,6 +1,10 @@
 import "./leagueImg.css";
 
-const LeagueImg = ({tournament}: any) => {
+interface leaugeImgData {
+    tournament: string
+}
+
+const LeagueImg = ({tournament}: leaugeImgData) => {
 
     const leaugeImages: {[key: string]: string} = {
         "Champions League": "championsLeauge",

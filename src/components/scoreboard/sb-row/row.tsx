@@ -7,12 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 interface RowData {
     pos: number,
-    logo: any,
+    logo: string,
     team: string,
     played: number,
     pts: number,
     gd: number,
-    tournament: any,
+    tournament: string,
     form: string,
     leagueNumber: number
 }

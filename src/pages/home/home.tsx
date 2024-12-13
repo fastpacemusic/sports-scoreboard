@@ -7,18 +7,17 @@ import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import LeagueGames from "../../components/leagueGames/leagueGames";
 import ArrowButton from "../../components/arrowButton/arrowButton";
 
-
 const Home = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [num, setNum] = useState<any>(searchParams.get('league') || 39);
+    const [num, setNum] = useState<number>(Number(searchParams.get('league') || 39));
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const newLeague = searchParams.get("league");
-        setNum(newLeague);
+        setNum(Number(newLeague));
       }, [location.search]);
 
     const leagueID = (data: number) => {

@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import "./topLeagues.css";
 import axios from "axios";
-import { ApiService } from "../../services/apiService";
+import { ApiService, LeagueData } from "../../services/apiService";
 
 
 interface topLeaguesData {
     sendLeagueID: (data: number) => void;
 }
 
+interface LeagueItem {
+    logo: string;
+    leagueName: string;
+    num: number;
+  }
+
 
 const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
 
-    const [leagueLogos, setLeagueLogos] = useState<any>({
+    const [leagueLogos, setLeagueLogos] = useState<Record<string, string>>({
         premierleague: '',
         seriea: '',
         ligue1: '',
@@ -39,11 +45,11 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
           const fetchData = async () => {
 
             try {
-                const leagueData = await new ApiService().getAllLeauges();
+                const leagueData = await new ApiService().getAllLeagues();
                 
                 
                 const getLeagueByName = (countryName: string, leagueName: string) => {
-                    const filteredLeagues = leagueData.filter((idxData: any) => {
+                    const filteredLeagues = leagueData.filter((idxData: LeagueData) => {
                         return idxData.country.name === countryName && idxData.name.toLowerCase() == leagueName.toLowerCase();
                     });
 
@@ -51,7 +57,7 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
 
                 }
 
-                setLeagueLogos((prevState: any) => ({
+                setLeagueLogos((prevState: Record<string, string>) => ({
                     ...prevState,
                     premierleague: getLeagueByName('England', 'Premier League'),
                     bundesliga: getLeagueByName('Germany', 'Bundesliga'),
@@ -87,7 +93,7 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
                 </tr>
             </thead>
             <tbody>
-                {leagueInfo.map((item: any, index: number) => (
+                {leagueInfo.map((item: LeagueItem, index: number) => (
                     <tr key={index} className="league-row" onClick={() => {sendLeagueID(item.num)}}                                                                                                                                                >
                         <td className="logo-wrap">
                             <img src={item.logo}  className="logo" alt="logo"></img>

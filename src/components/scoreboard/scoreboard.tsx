@@ -3,24 +3,27 @@ import Row from "./sb-row/row";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import { ApiService } from "../../services/apiService";
+import { ApiService, StandingsData } from "../../services/apiService";
+import Loading from "../loading/loading";
+
+interface scoreboardData {
+    leagueNum: number
+}
 
 
+const Scoreboard = ({leagueNum}: scoreboardData) => {
 
+    const [standings, setStandings] = useState<StandingsData[]>();
 
-const Scoreboard = ({leagueNum}: any) => {
-
-    const [standings, setStandings] = useState<any>();
-
-    const fetchData = async (leagueNum: any) => {
+    const fetchData = async (leagueNum: number) => {
         try {
             const response = await new ApiService().getScoreBoard(leagueNum);
             setStandings(response.league.standings[0]);
+
         } catch (error) {
             console.error(error);
         }
       }
-
 
     useEffect(() => {
 
@@ -29,7 +32,7 @@ const Scoreboard = ({leagueNum}: any) => {
 
     }, [leagueNum]);
 
-
+    
 
     return(
         <table className="scoreboard-wrap panel">
