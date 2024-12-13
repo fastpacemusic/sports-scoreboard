@@ -22,10 +22,11 @@ const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
             setName(response.league.name);
             setCountry(response.league.country);
             setLogo(response.league.logo);
-        } else {
-          setName(team ?? "unavailable");
-          setLogo(headlineLogo ?? "unavailable");
-        }
+        } 
+        // else {
+        //   setName(team ?? "unavailable");
+        //   setLogo(headlineLogo ?? "unavailable");
+        // }
 
       } catch (error) {
         console.error(error);
