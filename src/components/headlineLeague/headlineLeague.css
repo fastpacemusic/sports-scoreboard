@@ -39,7 +39,6 @@
     cursor: pointer;
     height: 40px;
     font-weight: bold;
-    border-bottom: 4px solid var(--color-background-hover);
 
 }
 
