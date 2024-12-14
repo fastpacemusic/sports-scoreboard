@@ -48,6 +48,11 @@ const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
                 <div className="league-name">{name}</div>
                 <div className="country">{country}</div>
             </div>
+            <nav className="headline-container">
+              <a id="Overview" className="item">Overview</a>
+              <a id="Table" className="item">Table</a>
+              <a id="News" className="item">News</a>
+            </nav>
         </div>
     );
 }

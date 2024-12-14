@@ -1,4 +1,5 @@
 .headline-wrap {
+    position: relative;
     height: var(--head-height);
     display: flex;
     flex-direction: row;
@@ -24,4 +25,24 @@
 
 .headline-league {
     margin-top: 15px;
+}
+
+.headline-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.item {
+    cursor: pointer;
+    height: 40px;
+    font-weight: bold;
+    border-bottom: 4px solid var(--color-background-hover);
+
+}
+
+.item:hover {
+    opacity: 0.7;
 }
