@@ -1,11 +1,18 @@
 import "./leagueGames.css";
 
+interface LeagueData {
+    Today: string,
+    Tomorrow: string,
+    Yesterday: string
+}
+
 
 const LeagueGames = () => {
 
 
     return(
         <div className="leagueGames panel">
+            <div className="date-of-game">Today</div>
             <ul className="team-wrap">
                 <li className="home-team">
                     <img src="" alt="logo" className="home-logo"/>
@@ -20,6 +27,7 @@ const LeagueGames = () => {
                         <span className="away-name">Fulham</span>
                     </div>
                 </li>
+                
             </ul>
         </div>
     );

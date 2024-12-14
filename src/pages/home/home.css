@@ -43,16 +43,34 @@ body {
 
 .matches-wrap {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     position: relative;
-    align-items: center;
     margin-bottom: 30px;
-    height: 200px;
+    height: 220px;
 }
 
 .matches {
     display: flex;
     flex-direction: row;
     gap: 15px;
+}
+
+.league-matches-scroll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.all-matches-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: var(--color-text);
+}
+
+.all-matches-btn:hover {
+    text-decoration-line: underline;
 }

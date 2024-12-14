@@ -13,3 +13,7 @@
     background-color: var(--color-background-hover);
     color: white;
 }
+
+.arrow-button {
+    margin: 15px;
+}
