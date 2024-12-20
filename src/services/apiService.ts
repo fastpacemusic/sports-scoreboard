@@ -21,6 +21,7 @@ export interface LeagueData {
 
 let  scoreboardCache: Promise<StandingsData> | undefined;
 
+const cache: any = {};
 
 
 
@@ -28,7 +29,9 @@ export class ApiService {
     getScoreBoard = (leagueNum: number): Promise<StandingsData> => {
         // if (!scoreboardCache) {
             // console.log(111);
-        const options = {
+          
+
+          const options = {
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
             params: {
@@ -44,9 +47,9 @@ export class ApiService {
             return response.data.response[0] as StandingsData;
           });
           return scoreboardCache;
-    //     }else {
-    //         return (scoreboardCache);
-    //     }
+
+        
+
     }
 
     getAllLeagues = (): Promise<LeagueData[]> => {
@@ -73,4 +76,16 @@ export class ApiService {
       });
     }
 
+
+    getCachedAPI(url: string) {
+      if (cache[url]) {
+        return cache[url];
+      } else {
+        return null;
+      }
+    } 
+
+    setCachedAPI(url: string, value: string) {
+      cache[url] = value;
+    }
 }
