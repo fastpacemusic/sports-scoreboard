@@ -25,11 +25,25 @@ const cache: any = {};
 
 
 
+
+
 export class ApiService {
+
+  getCachedAPI(url: string) {
+    if (cache[url]) {
+      return cache[url];
+    } else {
+      return null;
+    }
+  } 
+
+  setCachedAPI(url: string, value: string) {
+    cache[url] = value;
+  }
+
     getScoreBoard = (leagueNum: number): Promise<StandingsData> => {
         // if (!scoreboardCache) {
             // console.log(111);
-          
 
           const options = {
             method: 'GET',
@@ -43,10 +57,23 @@ export class ApiService {
               'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
             }
           };
-          scoreboardCache = axios.request(options).then(response => {
-            return response.data.response[0] as StandingsData;
-          });
-          return scoreboardCache;
+
+          if (this.getCachedAPI(options.url)) {
+            console.log('eee');
+            return this.getCachedAPI(options.url);
+          } else {
+
+            axios.request(options).then(response => {
+              const result = response.data.response[0];
+              this.setCachedAPI(options.url, result);
+              return result as StandingsData;
+            });
+
+          }
+
+
+
+          return cache;
 
         
 
@@ -77,15 +104,5 @@ export class ApiService {
     }
 
 
-    getCachedAPI(url: string) {
-      if (cache[url]) {
-        return cache[url];
-      } else {
-        return null;
-      }
-    } 
 
-    setCachedAPI(url: string, value: string) {
-      cache[url] = value;
-    }
 }
