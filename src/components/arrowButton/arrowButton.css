@@ -15,5 +15,9 @@
 }
 
 .arrow-button {
-    margin: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 }
+
+

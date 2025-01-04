@@ -46,6 +46,8 @@ body {
     position: relative;
     margin-bottom: 30px;
     height: 220px;
+    padding: 10px;
+    overflow-x: hidden;
 }
 
 .matches {
@@ -73,4 +75,12 @@ body {
 
 .all-matches-btn:hover {
     text-decoration-line: underline;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
 }

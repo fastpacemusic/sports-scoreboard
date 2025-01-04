@@ -37,16 +37,14 @@ const Home = () => {
                 <div className="matches-wrap panel">
                     <div className="all-matches-btn">Matches</div>
                     <div className="league-matches-scroll">
-                        <ArrowButton direction="left" onClick={() => {console.log("left button")}}/>
                         <div className="matches">
                             <LeagueGames />
                             <LeagueGames />
                             <LeagueGames />                     
                         </div>
-
-                        <ArrowButton direction="right" onClick={() => {console.log("right button")}} />
                     </div>
-
+                    <ArrowButton direction="left" onClick={() => {console.log("left button")}} className="left-arrow" />
+                    <ArrowButton direction="right" onClick={() => {console.log("right button")}} className="right-arrow" />
                 </div>
                 <div className="league-wrap">
                     {/* <TopLeagues sendLeagueID={leagueID}/> */}

@@ -5,15 +5,17 @@ import {ReactComponent as RightArrow} from "../../icons/arrows/right-arrow.svg";
 interface ArrowData {
     direction: "left" | "right";
     onClick: any;
+    className: string;
+
 }
 
-const ArrowButton = ({ direction, onClick }: ArrowData) => {
+const ArrowButton = ({ direction, onClick, className }: ArrowData) => {
 
 
 
 
     return(
-        <div className="arrow-button" onClick={onClick}>
+        <div className={`arrow-button ${className}`}onClick={onClick}>
             {direction === "left" && <LeftArrow className="arrow-svg" />}
             {direction === "right" && <RightArrow className="arrow-svg" />}    
         </div>

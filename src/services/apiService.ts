@@ -31,13 +31,14 @@ export class ApiService {
 
   getCachedAPI(url: string) {
     if (cache[url]) {
+      console.log('cached');
       return cache[url];
     } else {
       return null;
     }
   } 
 
-  setCachedAPI(url: string, value: string) {
+  setCachedAPI(url: string, value: any) {
     cache[url] = value;
   }
 
@@ -59,21 +60,16 @@ export class ApiService {
           };
 
           if (this.getCachedAPI(options.url)) {
-            console.log('eee');
-            return this.getCachedAPI(options.url);
+            return Promise.resolve(this.getCachedAPI(options.url));
           } else {
 
-            axios.request(options).then(response => {
+            return axios.request(options).then(response => {
               const result = response.data.response[0];
               this.setCachedAPI(options.url, result);
               return result as StandingsData;
             });
 
           }
-
-
-
-          return cache;
 
         
 
