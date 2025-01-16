@@ -31,14 +31,13 @@ export class ApiService {
 
   getCachedAPI(url: string) {
     if (cache[url]) {
-      console.log('cached');
       return cache[url];
     } else {
       return null;
     }
   } 
 
-  setCachedAPI(url: string, value: any) {
+  setCachedAPI(url: string, value: string) {
     cache[url] = value;
   }
 
@@ -59,20 +58,22 @@ export class ApiService {
             }
           };
 
-          if (this.getCachedAPI(options.url)) {
-            return Promise.resolve(this.getCachedAPI(options.url));
+          const apiLink = window.localStorage.getItem(options.url);
+
+          if (apiLink) {
+            console.log('Data retrieved from localStorage');
+            return Promise.resolve(JSON.parse(apiLink) as StandingsData);
           } else {
 
             return axios.request(options).then(response => {
               const result = response.data.response[0];
-              this.setCachedAPI(options.url, result);
+              console.log('Data fetched from API');
+              // this.setCachedAPI(options.url, result);
+              window.localStorage.setItem(options.url, JSON.stringify(result));
               return result as StandingsData;
             });
 
-          }
-
-        
-
+          } 
     }
 
     getAllLeagues = (): Promise<LeagueData[]> => {
@@ -86,17 +87,23 @@ export class ApiService {
           'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
         }
       };
-      return axios.request(options).then(response => {
-        // console.log(response.data.response);
-        return response.data.response.map((item: any) => {
-          // console.log(item);
-          return {
-            name: item.league.name,
-            logo: item.league.logo,
-            country: item.country
-          } as LeagueData;
+
+      const apiLink = window.localStorage.getItem(options.url);
+
+      if (apiLink) {
+        return Promise.resolve(JSON.parse(apiLink) as LeagueData[]);
+      } else {
+        return axios.request(options).then(response => {
+          return response.data.response.map((item: any) => {
+            return {
+              name: item.league.name,
+              logo: item.league.logo,
+              country: item.country
+            } as LeagueData;
+          });
         });
-      });
+      }
+
     }
 
 

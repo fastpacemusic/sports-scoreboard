@@ -5,6 +5,9 @@
     height: 80px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-
+.logo-name {
+    font-size: 25px;
+}

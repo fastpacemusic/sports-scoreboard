@@ -47,7 +47,7 @@ const Home = () => {
                     <ArrowButton direction="right" onClick={() => {console.log("right button")}} className="right-arrow" />
                 </div>
                 <div className="league-wrap">
-                    {/* <TopLeagues sendLeagueID={leagueID}/> */}
+                    <TopLeagues sendLeagueID={leagueID}/>
                     <Scoreboard leagueNum={num} />
                 </div>
             </div>
