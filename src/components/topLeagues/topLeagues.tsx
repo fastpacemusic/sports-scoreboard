@@ -49,8 +49,8 @@ const TopLeagues = ({sendLeagueID}: topLeaguesData) => {
                 
                 
                 const getLeagueByName = (countryName: string, leagueName: string) => {
-                    const filteredLeagues = leagueData.filter((idxData: LeagueData) => {
-                        return idxData.country.name === countryName && idxData.name.toLowerCase() == leagueName.toLowerCase();
+                    const filteredLeagues = Object.values(leagueData).filter((idxData: LeagueData) => {
+                        return idxData.country.name === countryName && idxData.name.toLowerCase() === leagueName.toLowerCase();
                     });
 
                     return filteredLeagues.length > 0 ? filteredLeagues[0].logo : '';

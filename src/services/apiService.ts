@@ -91,16 +91,20 @@ export class ApiService {
       const apiLink = window.localStorage.getItem(options.url);
 
       if (apiLink) {
+        console.log('Data retrieved from localStorage, top leagues');
         return Promise.resolve(JSON.parse(apiLink) as LeagueData[]);
       } else {
         return axios.request(options).then(response => {
-          return response.data.response.map((item: any) => {
+          console.log('Data retrieved from API, top leagues');
+          const leagues = response.data.response.map((item: any) => {
             return {
               name: item.league.name,
               logo: item.league.logo,
               country: item.country
             } as LeagueData;
           });
+          window.localStorage.setItem(options.url, JSON.stringify(leagues));
+          return leagues;
         });
       }
 
