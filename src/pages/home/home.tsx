@@ -3,7 +3,7 @@ import Scoreboard from "../../components/scoreboard/scoreboard";
 import TopLeagues from "../../components/topLeagues/topLeagues";
 import "./home.css";
 import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { replace, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import LeagueGames from "../../components/leagueGames/leagueGames";
 import ArrowButton from "../../components/arrowButton/arrowButton";
 
@@ -18,7 +18,18 @@ const Home = () => {
         const searchParams = new URLSearchParams(location.search);
         const newLeague = searchParams.get("league");
         setNum(Number(newLeague));
+
+        // Update or add the 'league' query parameter
+        searchParams.set("league", num.toString());
+    
+        // Update the URL with the new query parameter without reloading the page
+        navigate(`${location.pathname}?${searchParams.toString()}`);
+    
+
+
       }, [location.search]);
+
+
 
     const leagueID = (data: number) => {
         const params = new URLSearchParams(location.search);
@@ -29,6 +40,8 @@ const Home = () => {
         // Update the URL with the new query parameter without reloading the page
         navigate(`${location.pathname}?${params.toString()}`);
     };
+
+
 
     return (
         <div className="home">
@@ -47,7 +60,7 @@ const Home = () => {
                     <ArrowButton direction="right" onClick={() => {console.log("right button")}} className="right-arrow" />
                 </div>
                 <div className="league-wrap">
-                    <TopLeagues sendLeagueID={leagueID}/>
+                    {/* <TopLeagues sendLeagueID={leagueID}/> */}
                     <Scoreboard leagueNum={num} />
                 </div>
             </div>
