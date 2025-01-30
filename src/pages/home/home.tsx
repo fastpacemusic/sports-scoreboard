@@ -6,40 +6,38 @@ import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
 import { replace, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import LeagueGames from "../../components/leagueGames/leagueGames";
 import ArrowButton from "../../components/arrowButton/arrowButton";
+import { ApiService } from "../../services/apiService";
+
+interface Home {
+    leagueNum: number;
+}
 
 const Home = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
     const location = useLocation();
+    const [num, setNum] = useState<any>(39);
 
-    const [num, setNum] = useState<number>(Number(searchParams.get('league') || 39));
+    
+
+    const callCurrLeagueNum = async () => {
+        const response = await new ApiService().getAllLeagues();
+    }
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const newLeague = searchParams.get("league");
-        setNum(Number(newLeague));
-
+        setNum(() => {
+            return newLeague;
+        });
+    
         // Update or add the 'league' query parameter
-        searchParams.set("league", num.toString());
+        searchParams.set("league", num);
     
         // Update the URL with the new query parameter without reloading the page
-        navigate(`${location.pathname}?${searchParams.toString()}`);
-    
+        navigate(`${location.pathname}?${searchParams}`, {replace: true});
 
-
-      }, [location.search]);
-
-
-
-    const leagueID = (data: number) => {
-        const params = new URLSearchParams(location.search);
-
-        // Update or add the 'league' query parameter
-        params.set("league", data.toString());
-    
-        // Update the URL with the new query parameter without reloading the page
-        navigate(`${location.pathname}?${params.toString()}`);
-    };
+      }, [location.search, navigate, num]);
 
 
 
