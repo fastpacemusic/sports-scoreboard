@@ -47,12 +47,17 @@ const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
             <div className="headline-league">
                 <div className="league-name">{name}</div>
                 <div className="country">{country}</div>
+
             </div>
             <nav className="headline-container">
               <a id="overview" className="item">Overview</a>
               <a id="table" className="item">Table</a>
               <a id="news" className="item">News</a>
             </nav>
+            <select className="season-years">
+                <option>2024/2025</option>
+                <option>2023/2024</option>
+            </select>
         </div>
     );
 }
