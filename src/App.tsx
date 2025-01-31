@@ -1,5 +1,5 @@
 import './App.css';
-import Games from './pages/games/games';
+import Fixtures from './pages/Fixtures/Fixtures';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './pages/home/home';
 import Header from './components/header/header';
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route index element = {<Home />} />
           <Route path='/home' element = {<Home />} />
-          <Route path='/fixtures' element = {<Games />} />
+          <Route path='/fixtures' element = {<Fixtures />} />
           <Route path='/team-info' element = {<TeamInfo />} />
         </Routes>
       </BrowserRouter>

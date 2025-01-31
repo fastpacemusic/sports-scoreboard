@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Scoreboard from "../../components/scoreboard/scoreboard";
 import TopLeagues from "../../components/topLeagues/topLeagues";
 import "./home.css";
-import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
+import InfoPanel from "../../components/InfoPanel/InfoPanel";
 import { replace, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import LeagueGames from "../../components/leagueGames/leagueGames";
 import ArrowButton from "../../components/arrowButton/arrowButton";
@@ -49,7 +49,7 @@ const Home = () => {
     return (
         <div className="home">
             <div className='league'>
-                <HeadlineLeague leagueNum={num} />
+                <InfoPanel leagueNum={num} />
                 <div className="matches-wrap panel">
                     <div className="all-matches-btn">Matches</div>
                     <div className="league-matches-scroll">

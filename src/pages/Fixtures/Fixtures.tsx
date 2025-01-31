@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import "./games.css";
+import "./Fixtures.css";
 import axios, { all } from "axios";
 import {format} from "date-fns";
-import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
+import InfoPanel from "../../components/InfoPanel/InfoPanel";
 
-const Games = () => {
+const Fixtures = () => {
 
     const utcDate = new Date("2024-11-26T12:00:00+00:00");
     const [correctDate, setCorrectDate] = useState(format(utcDate, "EEEE, MMMM dd, yyyy"));
@@ -67,7 +67,7 @@ const Games = () => {
 
     return (
         <div className="fixture-wrap">
-            <HeadlineLeague />
+            <InfoPanel />
             <table className="upcoming-fixtures">
                 <thead>
                     <tr className="date-wrap">
@@ -99,4 +99,4 @@ const Games = () => {
     );
 }
 
-export default Games;
+export default Fixtures;

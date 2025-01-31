@@ -1,4 +1,4 @@
-import HeadlineLeague from "../../components/headlineLeague/headlineLeague";
+import InfoPanel from "../../components/InfoPanel/InfoPanel";
 import {useLocation } from "react-router-dom";
 import "./teamInfo.css";
 import Scoreboard from "../../components/scoreboard/scoreboard";
@@ -13,7 +13,7 @@ const TeamInfo = () =>  {
 
     return (
         <div className="teamInfo-wrap">
-            <HeadlineLeague team={team} headlineLogo={logo} />
+            <InfoPanel team={team} headlineLogo={logo} />
             <div className="team-form panel">
                 <span className="team-form-txt">Team Form</span>
                 <Form form={form}/>

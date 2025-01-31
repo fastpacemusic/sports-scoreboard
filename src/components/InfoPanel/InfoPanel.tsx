@@ -1,15 +1,15 @@
-import "./headlineLeague.css";
+import "./InfoPanel.css";
 import { ApiService } from "../../services/apiService";
 import { useEffect, useState } from "react";
 import Loading from "../loading/loading";
 
-interface HeadlineData {
+interface InfoPanel {
   leagueNum?: number,
   team?: string,
   headlineLogo?: string,
 }
 
-const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
+const InfoPanel = ({leagueNum, team, headlineLogo}: InfoPanel) => {
 
     const [name, setName] = useState<string>('');
     const [logo, setLogo] = useState<string>('');
@@ -62,4 +62,4 @@ const HeadlineLeague = ({leagueNum, team, headlineLogo}: HeadlineData) => {
     );
 }
 
-export default HeadlineLeague;
+export default InfoPanel;
