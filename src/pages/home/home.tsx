@@ -20,13 +20,18 @@ const Home = () => {
 
     
 
-    const callCurrLeagueNum = async () => {
-        const response = await new ApiService().getAllLeagues();
+    const fetchDataAndUpdateUrl = async ({leagueNum}: Home) => {
+        const response = await new ApiService().getScoreBoard(leagueNum);
+        setNum(response.league.id);
+
+
     }
 
     useEffect(() => {
+
         const searchParams = new URLSearchParams(location.search);
         const newLeague = searchParams.get("league");
+        
         setNum(() => {
             return newLeague;
         });
@@ -36,7 +41,7 @@ const Home = () => {
     
         // Update the URL with the new query parameter without reloading the page
         navigate(`${location.pathname}?${searchParams}`, {replace: true});
-
+    
       }, [location.search, navigate, num]);
 
 

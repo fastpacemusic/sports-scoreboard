@@ -6,6 +6,7 @@ export interface StandingsData {
         standings: any[];
         country: string;
         logo: string;
+        id?: any;
     }
 }
 
@@ -109,6 +110,8 @@ export class ApiService {
       }
 
     }
+
+    
 
 
 
