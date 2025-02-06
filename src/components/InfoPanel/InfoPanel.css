@@ -50,10 +50,16 @@
     margin-left: 15px;
 }
 
-.season-years {
+/* .season-years {
     height: 25px;
     background-color: azure;
     cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+} */
+
+.season-years {
     position: absolute;
     right: 20px;
     top: 15px;

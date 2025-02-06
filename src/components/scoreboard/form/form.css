@@ -23,6 +23,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    
+}
+
+.form-win:hover, .form-draw:hover, .form-loss:hover {
+    opacity: 0.6;
 }
 
 .form-wrap {

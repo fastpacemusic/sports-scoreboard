@@ -67,7 +67,7 @@ const Home = () => {
                     <Scoreboard leagueNum={num} />
                 </div>
             </div>
-                
+
       </div>
     );
 }

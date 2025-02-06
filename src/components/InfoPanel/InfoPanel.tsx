@@ -2,6 +2,7 @@ import "./InfoPanel.css";
 import { ApiService } from "../../services/apiService";
 import { useEffect, useState } from "react";
 import Loading from "../loading/loading";
+import Dropdown from "../dropdown/dropdown";
 
 interface InfoPanel {
   leagueNum?: number,
@@ -50,14 +51,11 @@ const InfoPanel = ({leagueNum, team, headlineLogo}: InfoPanel) => {
 
             </div>
             <nav className="headline-container">
-              <a id="overview" className="item">Overview</a>
-              <a id="table" className="item">Table</a>
-              <a id="news" className="item">News</a>
+              <a id="overview" className="item" onClick={() => console.log("overview")}>Overview</a>
+              <a id="table" className="item" onClick={() => console.log("table")}>Table</a>
+              <a id="news" className="item" onClick={() => console.log("news")}>News</a>
             </nav>
-            <select className="season-years">
-                <option>2024/2025</option>
-                <option>2023/2024</option>
-            </select>
+            <Dropdown className="season-years"/>
         </div>
     );
 }

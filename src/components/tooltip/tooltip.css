@@ -1,0 +1,10 @@
+.tooltip-container {
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tooltip-container, .tooltip-text {
+    width: 100px;
+}
+
