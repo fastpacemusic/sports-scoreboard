@@ -20,27 +20,25 @@ export interface LeagueData {
     logo: string;
 }
 
-let  scoreboardCache: Promise<StandingsData> | undefined;
+// let  scoreboardCache: Promise<StandingsData> | undefined;
 
-const cache: any = {};
-
-
+// const cache: any = {};
 
 
 
 export class ApiService {
 
-  getCachedAPI(url: string) {
-    if (cache[url]) {
-      return cache[url];
-    } else {
-      return null;
-    }
-  } 
+  // getCachedAPI(url: string) {
+  //   if (cache[url]) {
+  //     return cache[url];
+  //   } else {
+  //     return null;
+  //   }
+  // } 
 
-  setCachedAPI(url: string, value: string) {
-    cache[url] = value;
-  }
+  // setCachedAPI(url: string, value: string) {
+  //   cache[url] = value;
+  // }
 
     getScoreBoard = (leagueNum: number): Promise<StandingsData> => {
         // if (!scoreboardCache) {
@@ -59,7 +57,16 @@ export class ApiService {
             }
           };
 
+          
+
           const apiLink = window.localStorage.getItem(options.url);
+          // const apiTimeStamp = window.localStorage.getItem(`${apiLink}_timestamp`);
+
+
+          // if (apiLink && apiTimeStamp) {
+          //   const time = new Date().getTime();
+          //   const cachedTime = parseInt(apiLink, 10);
+          // }
 
           if (apiLink) {
             console.log('Data retrieved from localStorage');

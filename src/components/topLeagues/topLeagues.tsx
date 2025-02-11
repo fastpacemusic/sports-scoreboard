@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./topLeagues.css";
-import axios from "axios";
 import { ApiService, LeagueData } from "../../services/apiService";
 
 

@@ -1,8 +1,6 @@
-import { log } from "console";
 import "./row.css";
 import LeagueImg from "../../leagueImages/leagueImg";
 import Form from "../form/form";
-import TeamInfo from "../../../pages/teamInfo/teamInfo";
 import { useNavigate } from "react-router-dom";
 
 interface RowData {

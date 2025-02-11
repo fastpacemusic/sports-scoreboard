@@ -1,10 +1,8 @@
 import "./scoreboard.css";
 import Row from "./sb-row/row";
 import { useState } from "react";
-import axios from "axios";
 import { useEffect } from "react";
 import { ApiService, StandingsData } from "../../services/apiService";
-import Loading from "../loading/loading";
 
 interface scoreboardData {
     leagueNum: number
