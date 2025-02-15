@@ -1,14 +1,12 @@
-import "./InfoPanel.css";
+import "./headlineLeague.css";
 import { ApiService } from "../../services/apiService";
 import { useEffect, useState } from "react";
 import Loading from "../loading/loading";
-import Dropdown from "../dropdown/dropdown";
 
 interface InfoPanel {
   leagueNum?: number,
   team?: string,
   headlineLogo?: string,
-
 }
 
 const InfoPanel = ({leagueNum, team, headlineLogo}: InfoPanel) => {
@@ -16,7 +14,6 @@ const InfoPanel = ({leagueNum, team, headlineLogo}: InfoPanel) => {
     const [name, setName] = useState<string>('');
     const [logo, setLogo] = useState<string>('');
     const [country, setCountry] = useState<string>('');
-
 
     const fetchData = async (leagueNum: any) => {
       try {
@@ -41,6 +38,9 @@ const InfoPanel = ({leagueNum, team, headlineLogo}: InfoPanel) => {
       }, [leagueNum]);
 
 
+
+    
+
     return(
         <div className="headline-wrap panel">
             <img src={logo} className="headline-logo" alt="logo" />
@@ -50,11 +50,14 @@ const InfoPanel = ({leagueNum, team, headlineLogo}: InfoPanel) => {
 
             </div>
             <nav className="headline-container">
-              <a id="overview" className="item" onClick={() => console.log("overview")}>Overview</a>
-              <a id="table" className="item" onClick={() => console.log("table")}>Table</a>
-              <a id="news" className="item" onClick={() => console.log("news")}>News</a>
+              <a id="overview" className="item">Overview</a>
+              <a id="table" className="item">Table</a>
+              <a id="news" className="item">News</a>
             </nav>
-            <Dropdown className="season-years"/>
+            <select className="season-years">
+                <option>2024/2025</option>
+                <option>2023/2024</option>
+            </select>
         </div>
     );
 }

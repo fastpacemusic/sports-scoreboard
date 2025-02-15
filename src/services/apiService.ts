@@ -40,16 +40,14 @@ export class ApiService {
   //   cache[url] = value;
   // }
 
-    getScoreBoard = (leagueNum: number): Promise<StandingsData> => {
-        // if (!scoreboardCache) {
-            // console.log(111);
+    getScoreBoard = (leagueNum?: number, tableSeason?: number): Promise<StandingsData> => {
 
           const options = {
             method: 'GET',
             url: 'https://api-football-v1.p.rapidapi.com/v3/standings',
             params: {
               league: leagueNum,
-              season: '2024'
+              season: tableSeason || 2024
             },
             headers: {
               'x-rapidapi-key': '39078bce62msh6328de9fc911fbbp1f2c47jsn26c13a67abc9',
@@ -60,13 +58,6 @@ export class ApiService {
           
 
           const apiLink = window.localStorage.getItem(options.url);
-          // const apiTimeStamp = window.localStorage.getItem(`${apiLink}_timestamp`);
-
-
-          // if (apiLink && apiTimeStamp) {
-          //   const time = new Date().getTime();
-          //   const cachedTime = parseInt(apiLink, 10);
-          // }
 
           if (apiLink) {
             console.log('Data retrieved from localStorage');

@@ -14,6 +14,7 @@ const Home = () => {
     const location = useLocation();
     const [num, setNum] = useState<any>(39);
 
+
     useEffect(() => {
 
         const searchParams = new URLSearchParams(location.search);
@@ -35,7 +36,7 @@ const Home = () => {
     return (
         <div className="home">
             <div className='league'>
-                <InfoPanel leagueNum={num} />
+                <InfoPanel leagueNum={num}/>
                 <CompactList />
                 {/* <TopLeagues sendLeagueID={leagueID}/> */}
                 <Scoreboard leagueNum={num} />

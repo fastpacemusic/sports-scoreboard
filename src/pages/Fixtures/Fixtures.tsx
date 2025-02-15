@@ -72,7 +72,6 @@ const Fixtures = () => {
                 <thead>
                     <tr className="date-wrap">
                         <th className="date">{correctDate}</th>
-                        
                     </tr>
                 </thead>
                 <tbody>
