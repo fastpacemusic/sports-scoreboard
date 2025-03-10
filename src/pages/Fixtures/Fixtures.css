@@ -1,38 +1,24 @@
-.upcoming-fixtures {
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    width: 100%;
-}   
-
-.upcoming-fixtures, th, tr {
-    text-align: left;
-    font-weight: bold;
+.head-container {
+    height: 48px;
+    /* background-color: var(--color-background-bright); */
 }
 
-.fixture-wrap {
-    width: 900px;
-}
-
-.date {
-    background-color: var(--color-background-dark);
-    height: 40px;
-}
-
-.stadium {
-    font-size: smaller;
-    padding-top: 6px;
-}
-
-.team-row {
-    width: 50%;
-    float: right;
-}
-
-.fixture {
+.fixtures {
+    width: 600px;
+    background-color: var(--color-background-bright);
     cursor: pointer;
+    border-collapse: collapse;
 }
 
-.fixture:hover {
-    background-color: var(--color-background-hover);
+.body-container {
+    /* background-color: var(--color-background-bright); */
 }
 
+.game {
+    height: 64px;
+    position: relative;
+}
+
+.game:hover {
+    background: var(--color-background-hover);
+}

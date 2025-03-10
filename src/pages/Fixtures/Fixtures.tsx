@@ -16,49 +16,49 @@ const Fixtures = () => {
     const [teams, setTeams] = useState<any>([]);
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
         
-        const options = {
-            method: 'GET',
-            url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
-            params: {
-              league: '39',
-              season: '2024',
-              next: '50'
-            },
-            headers: {
-              'x-rapidapi-key': '39078bce62msh6328de9fc911fbbp1f2c47jsn26c13a67abc9',
-              'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
-            }
-          };
+    //     const options = {
+    //         method: 'GET',
+    //         url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures',
+    //         params: {
+    //           league: '39',
+    //           season: '2024',
+    //           next: '50'
+    //         },
+    //         headers: {
+    //           'x-rapidapi-key': '39078bce62msh6328de9fc911fbbp1f2c47jsn26c13a67abc9',
+    //           'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
+    //         }
+    //       };
 
-          const fetchData = async () => {
-                try {
-                    const utcDateString = format(utcDate, "MM/dd/yyyy");
-                    const response = await axios.request(options);
-                    const fixtureData = response.data.response;
-                    // console.log(fixtureData);
+    //       const fetchData = async () => {
+    //             try {
+    //                 const utcDateString = format(utcDate, "MM/dd/yyyy");
+    //                 const response = await axios.request(options);
+    //                 const fixtureData = response.data.response;
+    //                 // console.log(fixtureData);
 
-                    let teamData = fixtureData.filter((item: any) => {
-                        return format(new Date(item.fixture.date), "MM/dd/yyyy") === utcDateString;
-                    });
-                    setTeams(teamData);
-                    console.log(teams);
+    //                 let teamData = fixtureData.filter((item: any) => {
+    //                     return format(new Date(item.fixture.date), "MM/dd/yyyy") === utcDateString;
+    //                 });
+    //                 setTeams(teamData);
+    //                 console.log(teams);
 
 
                     
 
-                    // format(new Date(data.fixture.date), "MM/dd/yyyy") === utcDateString
+    //                 // format(new Date(data.fixture.date), "MM/dd/yyyy") === utcDateString
 
-                } catch (error) {
-                    console.error(error);
-                }
-          }
+    //             } catch (error) {
+    //                 console.error(error);
+    //             }
+    //       }
           
-          fetchData();
+    //       fetchData();
       
-    }, []);
+    // }, []);
 
     // useEffect(() => {
     //     console.log(teams);
@@ -68,30 +68,27 @@ const Fixtures = () => {
     return (
         <div className="fixture-wrap">
             <InfoPanel />
-            <table className="upcoming-fixtures">
-                <thead>
-                    <tr className="date-wrap">
-                        <th className="date">{correctDate}</th>
+            <table className="fixtures">
+                <thead className="head-container">
+                    <tr className="fix-head">
+                        <th className="logo"><img src="" alt="logo"></img></th>
+                        <th className="title">ucl champ league</th>
                     </tr>
                 </thead>
-                <tbody>
-                    
-                        <tr  className="fixture">
-                        <td className="team-row">
-                            <div className="home-team-wrap">
-                                <span className="home-team">Leicester City</span>
-                                <img src="#logo" className="logo" alt="logo" />
-                            </div>
-                            <div className="stadium">Stadium: West Brom</div>
-
-                        </td>
-                        <td className="time">{fixtureTime}</td>
-                        <td className="away-team-wrap">
-                            <img src="#logo" className="logo" alt="logo" />
-                            <span className="away-team">Chelsea</span>
-                        </td>
+                <tbody className="body-container">
+                    <tr className="game">
+                        <tr className="team1">
+                            <td id="gname1">chelsea</td>
+                            <td className="tlogo" id="tlogo1"><img src="" alt="logo"></img></td>
                         </tr>
-                    
+                        <td className="score">2-3</td>
+                        <tr className="team2">
+                            <td className="tlogo" id="tlogo2"><img src="" alt="logo"></img></td>
+                            <td id="gname2">fullham</td>
+                        </tr>
+                        <td className="amt-time">ft</td>
+                        <div className="game-following">★</div>
+                    </tr>
                 </tbody>
             </table>
         </div>
